@@ -1,0 +1,30 @@
+.ano {
+  color: #353535;
+  width: fit-content;
+  padding: 0.5em 1em;
+  border: 2px solid #353535;
+}
+
+.projeto{
+  background: rgba(50, 50, 50, 0.2);
+  width: 350px;
+  height: 10em;
+  display: flex;
+  align-items: center;
+}
+
+.conteudo{
+  background: #353535;
+  padding: 0.5em 1em;
+  position: absolute;
+}
+
+.descCompleta{
+  display: none;
+}
+
+.imagem {
+  width: 18em;
+  height: 9em;
+  background: white;
+}
