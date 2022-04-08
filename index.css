@@ -1,64 +1,69 @@
-* {
+@font-face {
+    font-family: FuturaPTLight;
+    src: url(./assets/fonts/FuturaPTLight.otf) format("opentype");
+}
+
+@font-face {
+    font-family: FuturaPTDemi;
+    src: url(./assets/fonts/FuturaPTDemi.otf) format("opentype");
+}
+
+body {
+    background-image: url(./assets/images/engrenagens.svg);
+    background-repeat: no-repeat;
+    background-position: right -50px top -80px;
+    background-size: min(550px, 60%);
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
-}
-
-html {
-    overflow-y: hidden;
-    background: #353535;
-}
-
-article {
     height: 100vh;
-    transition: all 1s ease-in-out;
+    width: 100vw;
 }
 
-hr {
-    width: 4em;
-    border: 2px solid #D16666;
+h1 {
+    font-family: FuturaPTLight;
+    font-weight: 20%;
+    color: #999;
+    position: absolute;
+    font-size: min(130px, 15vw);
+    margin: 0 0 50px 60px;
+    bottom: 0;
 }
 
 p {
-    font-family: 'Abel', sans-serif;
+    margin: 0;
+    line-height: .75;
 }
 
-.hexagon {
-    background: white ;
-    height: 5em;
-    width: 5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
+#subTexto {
+    font-family: FuturaPTDemi;
+    color: #666;
 }
 
-
-.barraLateral {
-    width: 2em;
-    height: 100%;
-    background: white;
-    border: 2px solid white;
+#engrenagens {
+    position: fixed;
+    height: 80%;
+    width: auto;
+    top: -100px;
+    right: -50px;
 }
 
-.pequena {
-    height: 5%;
-}
+@media screen and (max-width:800px) {
+    html {
+        /* Tem que ver isso aqui, ta estranho o bagulho */
+        /* Encontrar uma maneira melhor de evitar o overflow da altura da página */
+        height: -webkit-fill-available;
+    }
 
-#inicio {
-    background: #353535;
-    display: flex;
-}
+    body {
+        height: -webkit-fill-available;
+        background-position: left 50% top calc(50% + 40px);
+    }
 
-#sobreMim {
-    background: #353535;
-}
-
-#projetos {
-    background: #EEE4E1;
-}
-
-#projetos h2 {
-    color: #353535;
+    h1 {
+        /* Encontrar uma maneira melhor de centralizar o conteúdo */
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+    }
 }
