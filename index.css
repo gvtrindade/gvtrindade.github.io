@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Abel', sans-serif;
     color: white;
 }
 
@@ -16,43 +16,68 @@ article {
 }
 
 hr {
-    width: 4em;
+    width: 100px;
     border: 2px solid #D16666;
 }
 
-p {
-    font-family: 'Abel', sans-serif;
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4em;
 }
-
-.hexagon {
-    background: white ;
-    height: 5em;
-    width: 5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
-}
-
 
 .barraLateral {
-    width: 2em;
+    width: 20px;
     height: 100%;
     background: white;
     border: 2px solid white;
+    margin-right: 100px;
 }
 
 .pequena {
     height: 5%;
 }
 
-#inicio {
-    background: #353535;
-    display: flex;
+.align-left{
+    margin-right: 80px;
 }
 
-#sobreMim {
-    background: #353535;
+.align-right{
+    margin-left: 80px;
+}
+
+#inicio {
+    display: flex;
+    align-items: center;
+}
+
+#inicio .hexagon {
+    background: white;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
+}
+
+#inicio div {
+    height: 100vh;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inicio section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inicio section * {
+    margin: 3px;
 }
 
 #projetos {
