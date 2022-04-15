@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <title>Gabriel Trindade</title>
 </head>
 
@@ -35,8 +35,8 @@
     </a>
   </nav>
   <main>
-
-    <article class="pagina" id="inicio">
+    
+    <!-- <article class="pagina" id="inicio">
       <div class="links">
         <a class="hexagon align-left" href="https://github.com/gvtrindade" target="_blank">
           <img height="74" width="74" src="assets/images/github_64x64.png"></img>
@@ -58,95 +58,138 @@
     </article>
 
     <article class="pagina" id="sobreMim">
-      <a class="hexagon">
-        <img height="54" width="54" src="assets/images/github_64x64.png"></img>
-      </a>
-      <a class="hexagon">
-        <img height="44" width="44" src="assets/images/linkedin_64x64.png"></img>
-      </a>
-      <a class="hexagon">
-        <img height="64" width="64" src="assets/images/mail_64x64.png"></img>
-      </a>
+      <div class="links">
+        <a class="hexagon" style="margin-right: -20px;" href="https://github.com/gvtrindade" target="_blank">
+          <img height="54" width="54" style="transform: rotate(-90deg);" src="assets/images/github_64x64.png"></img>
+        </a>
+        <a class="hexagon" style="margin-top: 35px;" href="https://linkedin.com/in/gvtrindade2" target="_blank">
+          <img height="44" width="44" style="transform: rotate(-90deg);" src="assets/images/linkedin_64x64.png"></img>
+        </a>
+        <a class="hexagon" style="margin-left: -20px;" href="https://github.com/gvtrindade" target="_blank">
+          <img height="64" width="64" style="transform: rotate(-90deg);" src="assets/images/mail_64x64.png"></img>
+        </a>
+      </div>
 
-      <hr class="barraLateral pequena">
+      <section class="retrato">
+        <div>
+          <svg viewBox="0 0 227 194" fill="none" xmlns="http://www.w3.org/2000/svg" class="moldura" id="bordaCima">
+            <path id="Vector 4" d="M219 194V85.5643L141.09 8L2.92063e-06 8" stroke="#D16666" stroke-width="15" />
+          </svg>
+          <img src="./assets/images/gabriel_470x531.png" alt="Foto de Gabriel Trindade" id="fotoGabriel">
+          <svg viewBox="0 0 227 194" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="transform: rotate(180deg);" class="moldura" id="bordaBaixo">
+            <path id="Vector 4" d="M219 194V85.5643L141.09 8L2.92063e-06 8" stroke="#D16666" stroke-width="15"/>
+          </svg>
+        </div>
+      </section>
 
       <section>
+
         <h2>Sobre Mim</h2>
         <hr>
-        <p>
-          2 anos de experiência com javascript. Atualmente trabalha como estagiário na Basis. Não consegue
-          trabalhar sem música.
-        </p>
-        <p>Sites com design moderno e responsívo. PWA e aplicações web. </p>
-        <p>
-          Bootsrap e PrimeNG, mas tem preferência por CSS puro. Implementações simples de back-end com Java.
-          Possui experiência com Firebase.
-        </p>
+        <div style="margin: 15px;">
+          <p>
+            2 anos de experiência com javascript. Atualmente trabalha como estagiário na Basis. Não consegue
+            trabalhar sem música.
+          </p>
+          <br>
+          <p>Sites com design moderno e responsívo. PWA e aplicações web. </p>
+          <br>
+          <p>
+            Bootsrap e PrimeNG, mas tem preferência por CSS puro. Implementações simples de back-end com Java.
+            Possui experiência com Firebase.
+          </p>
+        </div>
       </section>
 
       <section>
         <h2>Qualificações</h2>
         <hr>
-        <p>Javascript</p>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>Angular</p>
-        <p>Java</p>
-        <p>Docker</p>
+        <div style="margin: 15px;">
+          <p>Javascript</p>
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>Angular</p>
+          <p>Java</p>
+          <p>Docker</p>
+        </div>
       </section>
 
-    </article>
+      <hr class="barraLateral pequena">
+    </article> -->
 
     <article class="pagina" id="projetos">
-      <h2>Projetos</h2>
-
-      <p>
-        <h4 class="ano">2022</h4>
-        <article class="projeto">
-          <div class="conteudo">
-            <h5>trindade.dev</h5>
-            <hr>
-            <p class="descSimples">Meu website</p>
-            <p class="descCompleta">Website em javascript puro. Contém meus projetos e links para contato.</p>
-          </div>
-          <div class="imagem"></div>
-        </article>
-        <!-- <h4 class="ano">2021</h4>
-        <article class="projeto">
-          <h5>Shokey</h5>
-          <hr>
-          <p>Teclado de atalhos na plataforma arduino</p>
-          <p>Hardware na plataforma arduino, software em Python. Possibilita a criação de teclas de atalho, combos de teclas, abrir programas e escrever textos.</p>
-        </article>
-        <hr>
-        <h4 class="ano">2020</h4>
-        <article class="projeto">
-          <h5>FakePlatinumGod</h5>
-          <hr>
-          <p>Widget para busca de itens no jogo The Binding of Isaac</p>
-          <p>Aplicação electron em javascript puro para busca de itens no jogo, mostrando detalhes do item e redirecionando para sua página na wiki.</p>
-        </article>
-        <hr>
-        <h4 class="ano">2019</h4>
-        <article class="projeto">
-          <h5>Yes or No</h5>
-          <hr>
-          <p>Site que responde sim ou não</p>
-          <p>Aplicação PWA em javascript puro que retorna um valor de sim ou não aleatoriamente.</p>
-        </article> -->
-        <h4 class="ano">Início</h4>
-        
+      <div>
+        <h2>Projetos</h2>
       </div>
 
-      <a class="hexagon">
-        <img height="54" width="54" src="assets/images/github_64x64.png"></img>
-      </a>
-      <a class="hexagon">
-        <img height="44" width="44" src="assets/images/linkedin_64x64.png"></img>
-      </a>
-      <a class="hexagon">
-        <img height="64" width="64" src="assets/images/mail_64x64.png"></img>
-      </a>
+      <div class="timeline">
+        <h4 class="ano">2022</h4>
+        <div class="containerProjeto esquerda">
+          <article class="projeto">
+            <div class="conteudo">
+              <h5>trindade.dev</h5>
+              <hr>
+              <p class="descSimples">Meu website</p>
+              <p class="descCompleta">Website em javascript puro. Contém meus projetos e links para contato.</p>
+            </div>
+            <div class="espacoVazio"></div>
+            <div class="imagem"></div>
+          </article>
+          <hr class="seta">
+          <hr class="linhaPrincipal">
+        </div>
+        <div class="containerProjeto">
+          <article class="projeto">
+            <div class="espacoVazio"></div>
+            <div class="imagem"></div>
+            <div class="conteudo">
+              <h5>trindade.dev</h5>
+              <hr>
+              <p class="descSimples">Meu website</p>
+              <p class="descCompleta">Website em javascript puro. Contém meus projetos e links para contato.</p>
+            </div>
+          </article>
+          <hr class="seta">
+          <hr class="linhaPrincipal">
+        </div>
+        <!-- <h4 class="ano">2021</h4>
+          <article class="projeto">
+            <h5>Shokey</h5>
+            <hr>
+            <p>Teclado de atalhos na plataforma arduino</p>
+            <p>Hardware na plataforma arduino, software em Python. Possibilita a criação de teclas de atalho, combos de teclas, abrir programas e escrever textos.</p>
+          </article>
+          <hr>
+          <h4 class="ano">2020</h4>
+          <article class="projeto">
+            <h5>FakePlatinumGod</h5>
+            <hr>
+            <p>Widget para busca de itens no jogo The Binding of Isaac</p>
+            <p>Aplicação electron em javascript puro para busca de itens no jogo, mostrando detalhes do item e redirecionando para sua página na wiki.</p>
+          </article>
+          <hr>
+          <h4 class="ano">2019</h4>
+          <article class="projeto">
+            <h5>Yes or No</h5>
+            <hr>
+            <p>Site que responde sim ou não</p>
+            <p>Aplicação PWA em javascript puro que retorna um valor de sim ou não aleatoriamente.</p>
+          </article> -->
+        <h4 class="ano" id="inicioTimeline">Início</h4>
+      </div>
+
+      <div class="links">
+        <a class="hexagon" style="margin-right: -20px;" href="https://github.com/gvtrindade" target="_blank">
+          <img height="54" width="54" style="transform: rotate(-90deg);" src="assets/images/github_64x64.png"></img>
+        </a>
+        <a class="hexagon" style="margin-top: 35px;" href="https://linkedin.com/in/gvtrindade2" target="_blank">
+          <img height="44" width="44" style="transform: rotate(-90deg);" src="assets/images/linkedin_64x64.png"></img>
+        </a>
+        <a class="hexagon" style="margin-left: -20px;" href="https://github.com/gvtrindade" target="_blank">
+          <img height="64" width="64" style="transform: rotate(-90deg);" src="assets/images/mail_64x64.png"></img>
+        </a>
+      </div>
     </article>
 
   </main>

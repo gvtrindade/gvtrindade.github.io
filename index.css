@@ -1,23 +1,31 @@
+:root {
+    --cor-primaria: #353535;
+    --cor-secundaria: white;
+    --cor-terciaria: #EEE4E1;
+    --cor-detalhe: #D16666;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Abel', sans-serif;
-    color: white;
+    color: var(--cor-secundaria);
 }
 
 html {
     overflow-y: hidden;
-    background: #353535;
+    background-color: var(--cor-primaria);
 }
 
 article {
     height: 100vh;
-    transition: all 1s ease-in-out;
+    transition: transform 1.5s;
 }
 
 hr {
+    margin: 10px;
     width: 100px;
-    border: 2px solid #D16666;
+    border: 2px solid var(--cor-detalhe);
 }
 
 h1 {
@@ -25,25 +33,50 @@ h1 {
     font-size: 4em;
 }
 
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3em;
+}
+
+h5 {    
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+}
+
+.hexagon {
+    background-color: var(--cor-secundaria);
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
+}
+
 .barraLateral {
+    margin: 0;
     width: 20px;
     height: 100%;
-    background: white;
-    border: 2px solid white;
+    background-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
     margin-right: 100px;
 }
 
-.pequena {
-    height: 5%;
+.links {
+    position: absolute;
+    display: flex;
+    margin: 25px 35px;
 }
 
-.align-left{
+.align-left {
     margin-right: 80px;
 }
 
-.align-right{
+.align-right {
     margin-left: 80px;
 }
+
+/* Página de início */
 
 #inicio {
     display: flex;
@@ -51,13 +84,8 @@ h1 {
 }
 
 #inicio .hexagon {
-    background: white;
     height: 150px;
     width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
 }
 
 #inicio div {
@@ -80,10 +108,152 @@ h1 {
     margin: 3px;
 }
 
-#projetos {
-    background: #EEE4E1;
+/* Página sobre mim */
+
+#sobreMim {
+    display: flex;
 }
 
+#sobreMim .hexagon {
+    transform: rotate(90deg);
+}
+
+#sobreMim section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sobreMim .moldura {
+    height: 150px;
+}
+
+#fotoGabriel {
+    height: 400px;
+}
+
+#bordaCima {
+    margin-left: 130px;
+    margin-bottom: -150px;
+}
+
+#bordaBaixo {
+    margin-left: -325px;
+    margin-bottom: -15px;
+}
+
+#tecnologias {
+    margin: 10px;
+}
+
+#sobreMim .barraLateral {
+    height: 5%;
+}
+
+/* Página de projetos */
+
+/* Backgroud */
+#projetos {
+    background-color: var(--cor-terciaria);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titulos */
 #projetos h2 {
-    color: #353535;
+    color: var(--cor-primaria);
+    text-align: center;
+    padding: 20px;
+}
+
+#projetos .hexagon {
+    transform: rotate(90deg);
+}
+
+/* Timeline */
+#projetos .timeline {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+/* Conteúdo da timeline */
+.caixaAno {
+    color: var(--cor-primaria);
+    width: fit-content;
+    padding: 10px 15px;
+    border: 2px solid var(--cor-primaria);
+}
+
+.projeto {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-flow: inherit;
+}
+
+.conteudoProjeto {
+    background: var(--cor-primaria);
+    padding: 10px 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descCompleta {
+    display: none;
+}
+
+.espacoVazio{
+    display: flex;
+    width: 90px;
+    flex: 1;
+}
+
+.imagem {
+    width: 300px;
+    height: 180px;
+    background: var(--cor-secundaria);
+}
+
+#projetos .links {
+    background-color: var(--cor-primaria);
+    position: relative;
+    width: fit-content;
+}
+
+.containerProjeto{
+    display: flex;
+    align-items: center;
+}
+
+.esquerda{
+    flex-flow: row-reverse;
+}
+
+.seta{
+    margin: 0;
+    border: 0;
+    width: 10vw;
+    height: 2px;
+    background-color: var(--cor-primaria);
+}
+
+.linhaPrincipal{
+    margin: 0;
+    border: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--cor-primaria);
+}
+
+.projeto hr {
+    margin-top: 5px;
+    width: 50px;
+    border: 1px solid var(--cor-detalhe);
 }
