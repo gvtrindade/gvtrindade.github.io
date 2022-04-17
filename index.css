@@ -65,15 +65,9 @@ h5 {
 .links {
     position: absolute;
     display: flex;
-    margin: 25px 35px;
-}
-
-.align-left {
-    margin-right: 80px;
-}
-
-.align-right {
-    margin-left: 80px;
+    padding: 10px 15px;
+    margin-left: 25px;
+    margin-top: 15px;
 }
 
 /* Página de início */
@@ -88,17 +82,13 @@ h5 {
     width: 150px;
 }
 
-#inicio div {
-    height: 100vh;
-    flex: 0.5;
-    display: flex;
+#inicio .links {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 #inicio section {
-    flex: 1;
+    margin-left: 300px;
+    flex: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,12 +163,19 @@ h5 {
 }
 
 /* Timeline */
-#projetos .timeline {
+#timeline {
     height: auto;
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: center;
+    overflow-y: scroll;
+    width: fit-content;
+    margin: auto;
+}
+
+#timeline::-webkit-scrollbar{
+    display: none;
 }
 
 /* Conteúdo da timeline */
@@ -189,6 +186,15 @@ h5 {
     border: 2px solid var(--cor-primaria);
 }
 
+.containerProjeto{
+    display: flex;
+    align-items: center;
+}
+
+.esquerda{
+    flex-flow: row-reverse;
+}
+ 
 .projeto {
     height: fit-content;
     display: flex;
@@ -199,14 +205,11 @@ h5 {
 .conteudoProjeto {
     background: var(--cor-primaria);
     padding: 10px 15px;
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.descCompleta {
-    display: none;
+    width: 100px;
 }
 
 .espacoVazio{
@@ -219,21 +222,6 @@ h5 {
     width: 300px;
     height: 180px;
     background: var(--cor-secundaria);
-}
-
-#projetos .links {
-    background-color: var(--cor-primaria);
-    position: relative;
-    width: fit-content;
-}
-
-.containerProjeto{
-    display: flex;
-    align-items: center;
-}
-
-.esquerda{
-    flex-flow: row-reverse;
 }
 
 .seta{
@@ -256,4 +244,11 @@ h5 {
     margin-top: 5px;
     width: 50px;
     border: 1px solid var(--cor-detalhe);
+}
+
+/* Barra de links */
+#projetos .links {
+    background-color: var(--cor-primaria);
+    position: relative;
+    width: fit-content;
 }
