@@ -1,0 +1,22 @@
+:root {
+  --cor-primaria: #353535;
+  --cor-secundaria: white;
+  --cor-terciaria: #EEE4E1;
+  --cor-detalhe: #D16666;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Abel', sans-serif;
+  overflow-y: hidden;
+  margin: 0;
+}
+
+.pagina{
+  height: 100vh;
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}

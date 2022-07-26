@@ -3,6 +3,7 @@
     --cor-secundaria: white;
     --cor-terciaria: #EEE4E1;
     --cor-detalhe: #D16666;
+    --valor-ativo: 65px;
 }
 
 * {
@@ -41,6 +42,10 @@ h2 {
 h5 {    
     font-family: 'Ubuntu', sans-serif;
     font-size: 1em;
+}
+
+.ativo{
+    width: var(--valor-ativo);
 }
 
 .hexagon {

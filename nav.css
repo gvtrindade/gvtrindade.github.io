@@ -1,21 +1,46 @@
 nav{
-  height: 100vh;
-  position: fixed;
-  right: 0;
-  z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  bottom: 10px;
+  position: fixed;
+  align-items: baseline;
   justify-content: center;
+  width: 100%;
+  z-index: 1;
 }
 
-svg{
-  transition: width 0.2s ;
-  margin-right: 0.8em;
-  margin-top: 1em;
-  padding: 0.3em;
+.indicadorPagina{
+  background-color: var(--cor-secundaria);
+  border-radius: 2px;
+  margin: 10px;
+  height: 40px;
+  width: 6px;
 }
 
-svg:hover{
+.primeiro{
+  height: 65px;
+}
+
+.indicadorPagina:hover{
   cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+
+  nav{
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+    height: 100%;
+  }
+
+  .indicadorPagina{
+    height: 6px;
+    width: 40px;
+  }
+
+  .primeiro{
+    width: 65px;
+  }
+
 }
