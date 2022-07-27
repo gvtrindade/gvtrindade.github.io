@@ -1,7 +1,7 @@
 //Declarar os elementos
 const paginas = document.getElementsByClassName("pagina");
 const timeline = document.getElementById("timeline");
-const svgPaginas = document.getElementsByClassName("svgPagina");
+const svgPaginas = document.getElementsByClassName("indicadorNav");
 
 //Declarar as variáveis
 let paginaAtual = 0;
@@ -61,6 +61,7 @@ function rolarPagina(proxPagina) {
   }
   timeline.scrollTop = 0;
   animacaoPagina(proxPagina);
+  alterarCorDoIndicador(proxPagina);
 
   Array.from(paginas).forEach((elemento) => {
     elemento.style.transform = `translateY(${valorTranslate})`;
@@ -72,6 +73,14 @@ function rolarPagina(proxPagina) {
 function animacaoPagina(proxPagina) {
   svgPaginas[paginaAtual].classList.toggle("ativo");
   svgPaginas[proxPagina].classList.toggle("ativo");
+}
+
+function alterarCorDoIndicador(proxPagina) {
+  if(proxPagina === 1 || proxPagina === 2){
+    Array.from(svgPaginas).forEach(indicador => {
+      indicador.classList.toggle('invertido')
+    })
+  }
 }
 
 //Mostrar/esconder descrição detalhada ao passar o mouse em cima do projeto

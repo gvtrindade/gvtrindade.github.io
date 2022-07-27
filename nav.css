@@ -1,27 +1,37 @@
+:root {
+  --cor-primaria: #353535;
+  --cor-secundaria: white;
+  --cor-terciaria: #EEE4E1;
+  --cor-detalhe: #D16666;
+  --valor-ativo: 65px;
+}
+
 nav{
-  display: flex;
-  bottom: 10px;
   position: fixed;
-  align-items: baseline;
+  bottom: 0.8rem;
+  display: flex;
   justify-content: center;
   width: 100%;
   z-index: 1;
 }
 
-.indicadorPagina{
-  background-color: var(--cor-secundaria);
-  border-radius: 2px;
-  margin: 10px;
-  height: 40px;
-  width: 6px;
-}
-
-.primeiro{
-  height: 65px;
+.indicadorNav{
+  height: 7px;
+  width: 30px;
+  transform: rotate(90deg);
+  margin: 1em 0;
 }
 
 .indicadorPagina:hover{
   cursor: pointer;
+}
+
+.ativo{
+  width: 45px;
+}
+
+.invertido{
+  fill: var(--cor-primaria);
 }
 
 @media screen and (min-width: 800px) {

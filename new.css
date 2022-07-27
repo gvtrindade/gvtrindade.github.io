@@ -1,22 +1,227 @@
 :root {
   --cor-primaria: #353535;
   --cor-secundaria: white;
-  --cor-terciaria: #EEE4E1;
-  --cor-detalhe: #D16666;
+  --cor-terciaria: #eee4e1;
+  --cor-detalhe: #d16666;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-  font-family: 'Abel', sans-serif;
+body {
+  font-family: "Abel", sans-serif;
   overflow-y: hidden;
   margin: 0;
 }
 
-.pagina{
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 0;
+}
+
+hr {
+  margin: 0 auto;
+  width: 5em;
+  border: 2px solid var(--cor-detalhe);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.pagina {
   height: 100vh;
+  transition: transform 1.2s;
   background-color: var(--cor-primaria);
   color: var(--cor-secundaria);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  padding: 0 2em;
+  padding-top: 1em;
+}
+
+.hexagon {
+  background-color: var(--cor-secundaria);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 2%, 93% 25%, 93% 75%, 50% 98%, 7% 75%, 7% 25%);
+}
+
+.hexagon img {
+  width: 60%;
+  margin: 1em;
+}
+
+/* Pagina inicial */
+
+.inicio__texto {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.inicio__texto hr {
+  margin: 0 auto;
+  margin-bottom: 3em;
+}
+
+.inicio__texto p {
+  line-height: 1em;
+  margin-bottom: 4em;
+}
+
+.retrato div {
+  margin: 0 auto;
+}
+
+.retrato svg {
+  height: 5rem;
+  display: block;
+}
+
+.retrato #bordaCima {
+  margin-left: 2rem;
+  margin-bottom: -4.2rem;
+}
+
+.retrato #bordaBaixo {
+  margin-right: 3rem;
+  margin-top: -5rem;
+  margin-bottom: 3em;
+}
+
+.retrato img {
+  width: 50%;
+}
+
+.divisoria {
+  width: 100%;
+  height: 2em;
+  background-color: var(--cor-terciaria);
+  border: none;
+  position: absolute;
+  bottom: 13%;
+}
+
+/* Pagina sobre mim */
+
+.sobreMim__texto {
+  text-align: center;
+}
+
+#sobreMim p {
+  font-size: 0.9em;
+}
+
+#sobreMim .descritivo {
+  margin: 2rem 0;
+}
+
+.divisoria__projetos{
+  width: 100%;
+  height: 5rem;
+  border: none;
+  background-color: var(--cor-terciaria);
+  position: absolute;
+  bottom: 0;
+}
+
+/* Pagina de projetos */
+
+.invertida {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-primaria);
+}
+
+#timeline {
+  height: 75vh;
+  width: 90%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.caixaAno {
+  width: fit-content;
+  padding: 0.4em 0.8em;
+  border: 2px solid;
+  margin: 0 auto;
+}
+
+.projeto {
+  border: 1px solid black;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projeto__imagem{
+  max-width: 70%;
+}
+
+.projeto__texto {
+  background: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  text-align: center;
+  margin-left: -3em;
+  height: 5em;
+  padding: 1em 0.5em;
+}
+
+.seta {
+  display: none;
+}
+
+.linhaPrincipal{
+  position: absolute;
+  border: none;
+  width: 2px;
+  height: 100%;
+  background-color: var(--cor-primaria);
+  display: none;
+}
+
+.projeto hr {
+  width: 4em;
+  border: 1px solid var(--cor-detalhe);
+}
+
+#inicioTimeline {
+  padding: 1em 0.7em;
+  border-radius: 50%;
+}
+
+.projetos__titulo {
+  text-align: center;
+  padding: 2em 0;
 }
