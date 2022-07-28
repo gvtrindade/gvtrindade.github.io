@@ -1,255 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="index.css"> -->
-    <link rel="stylesheet" href="new.css" />
-    <link rel="stylesheet" href="nav.css" />
-    <link rel="stylesheet" href="projects.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200&display=swap"
-      rel="stylesheet"
-    />
-    <title>Gabriel Trindade</title>
-  </head>
 
-  <body>
-    <nav>
-      <a onclick="rolarPagina(0)">
-        <svg class="indicadorNav vertical ativo">
-          <line
-            x1="0"
-            y1="0"
-            x2="65"
-            y2="0"
-            style="stroke: #ffffff; stroke-width: 7"
-          />
-        </svg>
-      </a>
-      <a onclick="rolarPagina(1)">
-        <svg class="indicadorNav vertical">
-          <line
-            x1="0"
-            y1="0"
-            x2="65"
-            y2="0"
-            style="stroke: #ffffff; stroke-width: 7"
-          />
-        </svg>
-      </a>
-      <a onclick="rolarPagina(2)">
-        <svg class="indicadorNav vertical">
-          <line
-            x1="0"
-            y1="0"
-            x2="65"
-            y2="0"
-            style="stroke: #ffffff; stroke-width: 7"
-          />
-        </svg>
-      </a>
-    </nav>
-    <main>
-      <article class="pagina" id="inicio">
-        <div class="container">
-          <div class="links">
-            <a
-              class="hexagon"
-              href="https://github.com/gvtrindade"
-              target="_blank"
-            >
-              <img src="assets/images/github_64x64.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="new.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="projects.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200&display=swap" rel="stylesheet" />
+  <title>Gabriel Trindade</title>
+</head>
+
+<body>
+  <nav>
+    <a onclick="rolarPagina(0)">
+      <svg class="indicadorNav vertical ativo">
+        <line x1="0" y1="0" x2="65" y2="0" style="stroke: #ffffff; stroke-width: 7" />
+      </svg>
+    </a>
+    <a onclick="rolarPagina(1)">
+      <svg class="indicadorNav vertical">
+        <line x1="0" y1="0" x2="65" y2="0" style="stroke: #ffffff; stroke-width: 7" />
+      </svg>
+    </a>
+    <a onclick="rolarPagina(2)">
+      <svg class="indicadorNav vertical">
+        <line x1="0" y1="0" x2="65" y2="0" style="stroke: #ffffff; stroke-width: 7" />
+      </svg>
+    </a>
+  </nav>
+  <main>
+    <article class="pagina" id="inicio">
+      <div class="container">
+
+        <div class="links">
+          <svg width="215" height="101" viewBox="0 0 215 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <a href="mailto:gabriel@trindade.dev" target="_blank">
+              <path d="M68 34L51 63.4449L17 63.4449L0 34L17 4.55514L51 4.55514L68 34Z" fill="white" />
+              <path
+                d="M53.0878 27.0171V43.693C53.0878 46.576 50.7516 48.9123 47.8685 48.9123H20.5294C19.1451 48.9123 17.8176 48.3624 16.8388 47.3836C15.8599 46.4048 15.3101 45.0772 15.3101 43.693L15.3101 27.0171L33.6005 37.0779C33.9733 37.2827 34.4256 37.2827 34.7974 37.0779L53.0878 27.0161V27.0171ZM47.8685 19.0877C49.231 19.0878 50.5394 19.6207 51.5143 20.5725C52.4891 21.5244 53.0532 22.8197 53.0859 24.1817L34.199 34.5706L15.312 24.1807L15.314 24.0913C15.3697 22.7454 15.9435 21.4733 16.9155 20.5407C17.8875 19.6082 19.1824 19.0876 20.5294 19.0877L47.8685 19.0877Z"
+                fill="#353535" />
             </a>
-            <a
-              class="hexagon"
-              href="https://linkedin.com/in/gvtrindade2"
-              target="_blank"
-            >
-              <img src="assets/images/linkedin_64x64.png" />
+
+            <a href="https://linkedin.com/in/gvtrindade2" target="_blank">
+              <path d="M142 66.5L124.5 96.3779L89.5 96.3779L72 66.5L89.5 36.6221L124.5 36.6221L142 66.5Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M89.0137 51.7733C89.0137 50.977 89.3346 50.2133 89.9058 49.6502C90.477 49.0872 91.2518 48.7708 92.0596 48.7708L122.423 48.7708C122.823 48.7702 123.22 48.8474 123.59 48.998C123.96 49.1486 124.296 49.3697 124.579 49.6486C124.862 49.9275 125.087 50.2587 125.24 50.6233C125.393 50.9879 125.472 51.3786 125.472 51.7733V81.7027C125.472 82.0974 125.394 82.4883 125.241 82.853C125.088 83.2178 124.864 83.5492 124.58 83.8284C124.297 84.1076 123.961 84.329 123.591 84.48C123.221 84.631 122.825 84.7086 122.424 84.7084H92.0596C91.6595 84.7084 91.2632 84.6306 90.8936 84.4797C90.5239 84.3287 90.1881 84.1074 89.9052 83.8284C89.6224 83.5494 89.398 83.2182 89.2451 82.8538C89.0921 82.4893 89.0135 82.0987 89.0137 81.7043V51.7733ZM103.445 62.4728H108.381V64.9166C109.094 63.5118 110.917 62.2474 113.656 62.2474C118.908 62.2474 120.152 65.0456 120.152 70.1798V79.6902H114.838V71.3494C114.838 68.4254 114.125 66.7755 112.316 66.7755C109.805 66.7755 108.761 68.5544 108.761 71.3494V79.6902H103.445V62.4728ZM94.33 79.4664H99.6462V62.2474H94.33V79.4647V79.4664ZM100.407 56.6314C100.417 57.08 100.336 57.5262 100.169 57.9436C100.001 58.361 99.7512 58.7413 99.4329 59.0621C99.1145 59.3829 98.7343 59.6378 98.3146 59.8118C97.8949 59.9859 97.4442 60.0755 96.9889 60.0755C96.5336 60.0755 96.0829 59.9859 95.6632 59.8118C95.2436 59.6378 94.8634 59.3829 94.545 59.0621C94.2266 58.7413 93.9765 58.361 93.8092 57.9436C93.6419 57.5262 93.5609 57.08 93.571 56.6314C93.5906 55.7507 93.9594 54.9126 94.5982 54.2965C95.2371 53.6805 96.0952 53.3356 96.9889 53.3356C97.8826 53.3356 98.7408 53.6805 99.3796 54.2965C100.018 54.9126 100.387 55.7507 100.407 56.6314V56.6314Z"
+                fill="#353535" />
             </a>
-            <a
-              class="hexagon"
-              href="https://github.com/gvtrindade"
-              target="_blank"
-            >
-              <img src="assets/images/mail_64x64.png" />
+
+            <a href="https://github.com/gvtrindade" target="_blank">
+              <path d="M215 35L198 64.4449H164L147 35L164 5.55514L198 5.55514L215 35Z" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M181 16.1111C170.564 16.1111 162.111 24.7777 162.111 35.4778C162.111 44.0475 167.518 51.2858 175.027 53.8519C175.971 54.0214 176.325 53.4404 176.325 52.932C176.325 52.472 176.302 50.9469 176.302 49.3249C171.556 50.2207 170.328 48.1387 169.95 47.0494C169.738 46.4926 168.817 44.7738 168.014 44.3138C167.353 43.9507 166.409 43.055 167.99 43.0308C169.478 43.0066 170.54 44.4349 170.895 45.0159C172.595 47.9451 175.31 47.122 176.396 46.6136C176.561 45.3548 177.057 44.5075 177.6 44.0233C173.397 43.5392 169.006 41.8688 169.006 34.461C169.006 32.3549 169.738 30.6119 170.942 29.2562C170.753 28.7721 170.092 26.787 171.131 24.1241C171.131 24.1241 172.713 23.6157 176.325 26.1092C177.836 25.6734 179.442 25.4555 181.047 25.4555C182.653 25.4555 184.259 25.6734 185.77 26.1092C189.382 23.5915 190.964 24.1241 190.964 24.1241C192.003 26.787 191.342 28.7721 191.153 29.2562C192.357 30.6119 193.089 32.3307 193.089 34.461C193.089 41.893 188.674 43.5392 184.471 44.0233C185.156 44.6285 185.746 45.7905 185.746 47.6062C185.746 50.1964 185.722 52.2784 185.722 52.932C185.722 53.4404 186.077 54.0456 187.021 53.8519C190.771 52.5539 194.029 50.083 196.337 46.7869C198.646 43.4908 199.888 39.5356 199.889 35.4778C199.889 24.7777 191.436 16.1111 181 16.1111Z"
+                fill="#353535" />
             </a>
-          </div>
-          <section class="inicio__texto">
-            <h1>Gabriel Trindade</h1>
-            <h3>Full Stack Developer</h3>
+
+          </svg>
+        </div>
+
+        <div class="inicio__texto">
+          <h1>Gabriel Trindade</h1>
+          <h3>Full Stack Developer</h3>
+          <hr />
+          <p>
+            desenvolvedor web, cursando análise e desenvolvimento de sistemas.
+          </p>
+        </div>
+
+        <img class="inicio__img" src="./assets/images/profile_mobile.png" alt="Imagem de Gabriel Trindade">
+      </div>
+      <hr class="divisoria">
+    </article>
+
+    <article class="pagina sobreMim">
+      <div class="container">
+        <div class="links">
+          <svg width="320" height="83" viewBox="0 0 320 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <a href="mailto:gabriel@trindade.dev" target="_blank">
+              <path d="M143 28L129 52.2487L101 52.2487L87 28L101 3.75129L129 3.75129L143 28Z" fill="white" />
+              <path
+                d="M130.72 22.2494V35.9825C130.72 38.3567 128.796 40.2807 126.421 40.2807H103.907C102.767 40.2807 101.673 39.8279 100.867 39.0218C100.061 38.2157 99.6084 37.1224 99.6084 35.9825V22.2494L114.671 30.5347C114.978 30.7034 115.351 30.7034 115.657 30.5347L130.72 22.2485V22.2494ZM126.421 15.7193C127.543 15.7194 128.621 16.1583 129.424 16.9421C130.226 17.726 130.691 18.7927 130.718 19.9144L115.164 28.4699L99.61 19.9136L99.6117 19.8399C99.6575 18.7316 100.13 17.6839 100.931 16.9159C101.731 16.148 102.797 15.7192 103.907 15.7193L126.421 15.7193Z"
+                fill="#353535" />
+            </a>
+
+            <a href="https://linkedin.com/in/gvtrindade2" target="_blank">
+              <path d="M187 54.5L172.75 79.1817H144.25L130 54.5L144.25 29.8183L172.75 29.8183L187 54.5Z" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M143.854 42.3344C143.854 41.6766 144.115 41.0457 144.58 40.5806C145.046 40.1155 145.676 39.8542 146.334 39.8542H171.059C171.385 39.8536 171.707 39.9174 172.009 40.0418C172.31 40.1662 172.584 40.3489 172.814 40.5793C173.045 40.8096 173.228 41.0833 173.353 41.3844C173.478 41.6856 173.542 42.0084 173.542 42.3344V67.0587C173.542 67.3848 173.478 67.7077 173.353 68.009C173.229 68.3103 173.046 68.5841 172.816 68.8147C172.585 69.0454 172.311 69.2283 172.01 69.353C171.709 69.4777 171.386 69.5418 171.06 69.5417H146.334C146.008 69.5417 145.686 69.4775 145.385 69.3527C145.084 69.228 144.81 69.0452 144.58 68.8147C144.35 68.5843 144.167 68.3107 144.042 68.0096C143.918 67.7086 143.854 67.3859 143.854 67.0601V42.3344ZM155.605 51.1732H159.625V53.1919C160.205 52.0314 161.689 50.987 163.92 50.987C168.196 50.987 169.21 53.2986 169.21 57.5398V65.3962H164.882V58.506C164.882 56.0905 164.302 54.7276 162.828 54.7276C160.784 54.7276 159.934 56.1971 159.934 58.506V65.3962H155.605V51.1732ZM148.183 65.2113H152.512V50.987H148.183V65.21V65.2113ZM153.131 46.3476C153.14 46.7183 153.074 47.0868 152.937 47.4316C152.801 47.7765 152.597 48.0906 152.338 48.3556C152.079 48.6206 151.769 48.8312 151.428 48.975C151.086 49.1187 150.719 49.1928 150.348 49.1928C149.977 49.1928 149.61 49.1187 149.269 48.975C148.927 48.8312 148.617 48.6206 148.358 48.3556C148.099 48.0906 147.895 47.7765 147.759 47.4316C147.623 47.0868 147.557 46.7183 147.565 46.3476C147.581 45.6201 147.881 44.9277 148.401 44.4189C148.922 43.91 149.62 43.625 150.348 43.625C151.076 43.625 151.775 43.91 152.295 44.4189C152.815 44.9277 153.115 45.6201 153.131 46.3476V46.3476Z"
+                fill="#353535" />
+            </a>
+
+            <a href="https://github.com/gvtrindade" target="_blank">
+              <path d="M231 29L217 53.2487L189 53.2487L175 29L189 4.75129L217 4.75129L231 29Z" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M203 13.4445C194.405 13.4445 187.444 20.5816 187.444 29.3935C187.444 36.4509 191.897 42.4119 198.08 44.5251C198.858 44.6647 199.15 44.1862 199.15 43.7675C199.15 43.3887 199.13 42.1328 199.13 40.797C195.222 41.5347 194.211 39.8201 193.9 38.923C193.725 38.4645 192.967 37.049 192.305 36.6702C191.761 36.3712 190.983 35.6335 192.286 35.6136C193.511 35.5937 194.386 36.7699 194.678 37.2484C196.078 39.6607 198.314 38.9828 199.208 38.5642C199.344 37.5275 199.753 36.8297 200.2 36.431C196.739 36.0323 193.122 34.6567 193.122 28.5562C193.122 26.8217 193.725 25.3863 194.717 24.2699C194.561 23.8711 194.017 22.2364 194.872 20.0434C194.872 20.0434 196.175 19.6247 199.15 21.6781C200.394 21.3193 201.717 21.1399 203.039 21.1399C204.361 21.1399 205.683 21.3193 206.928 21.6781C209.903 19.6048 211.205 20.0434 211.205 20.0434C212.061 22.2364 211.517 23.8711 211.361 24.2699C212.353 25.3863 212.955 26.8018 212.955 28.5562C212.955 34.6766 209.319 36.0323 205.858 36.431C206.422 36.9294 206.908 37.8863 206.908 39.3816C206.908 41.5147 206.889 43.2293 206.889 43.7675C206.889 44.1862 207.18 44.6846 207.958 44.5251C211.046 43.4562 213.73 41.4213 215.631 38.7069C217.532 35.9925 218.555 32.7352 218.555 29.3935C218.555 20.5816 211.594 13.4445 203 13.4445Z"
+                fill="#353535" />
+            </a>
+
+            <path d="M100 53.5L85.75 78.1817H57.25L43 53.5L57.25 28.8183L85.75 28.8183L100 53.5Z" fill="white" />
+            <path d="M56 28L42 52.2487L14 52.2487L0 28L14 3.75129L42 3.75129L56 28Z" fill="white" />
+            <path d="M276 53.5L261.75 78.1817H233.25L219 53.5L233.25 28.8183L261.75 28.8183L276 53.5Z" fill="white" />
+            <path d="M320 29L306 53.2487L278 53.2487L264 29L278 4.75129L306 4.75129L320 29Z" fill="white" />
+          </svg>
+
+        </div>
+
+        <div class="retrato" hidden>
+          <img src="./assets/images/profile_mobile.png" alt="Imagem de Gabriel Trindade">
+        </div>
+
+        <div class="sobreMim__texto">
+          <div class="descritivo">
+            <h2>Sobre mim</h2>
             <hr />
-            <p>
-              desenvolvedor web, cursando análise e desenvolvimento de sistemas.
-            </p>
-          </section>
-
-          <section class="retrato">
-            <div>
-              <svg
-                viewBox="0 0 227 194"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="moldura"
-                id="bordaCima"
-              >
-                <path
-                  id="Vector 4"
-                  d="M219 194V85.5643L141.09 8L2.92063e-06 8"
-                  stroke="#D16666"
-                  stroke-width="15"
-                />
-              </svg>
-              <img
-                src="./assets/images/gabriel_470x531.png"
-                alt="Foto de Gabriel Trindade"
-                id="fotoGabriel"
-              />
-              <svg
-                viewBox="0 0 227 194"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style="transform: rotate(180deg)"
-                class="moldura"
-                id="bordaBaixo"
-              >
-                <path
-                  id="Vector 4"
-                  d="M219 194V85.5643L141.09 8L2.92063e-06 8"
-                  stroke="#D16666"
-                  stroke-width="15"
-                />
-              </svg>
-            </div>
-          </section>
-        </div>
-        <hr class="divisoria" />
-      </article>
-
-      <article class="pagina" id="sobreMim">
-        <div class="container">
-          <div class="links">
-            <a
-              class="hexagon"
-              href="https://github.com/gvtrindade"
-              target="_blank"
-            >
-              <img src="assets/images/github_64x64.png" />
-            </a>
-            <a
-              class="hexagon"
-              href="https://linkedin.com/in/gvtrindade2"
-              target="_blank"
-            >
-              <img src="assets/images/linkedin_64x64.png" />
-            </a>
-            <a
-              class="hexagon"
-              href="https://github.com/gvtrindade"
-              target="_blank"
-            >
-              <img src="assets/images/mail_64x64.png" />
-            </a>
-          </div>
-
-          <div class="retrato" hidden>
-            <div>
-              <svg
-                viewBox="0 0 227 194"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="moldura"
-                id="bordaCima"
-              >
-                <path
-                  id="Vector 4"
-                  d="M219 194V85.5643L141.09 8L2.92063e-06 8"
-                  stroke="#D16666"
-                  stroke-width="15"
-                />
-              </svg>
-              <img
-                src="./assets/images/gabriel_470x531.png"
-                alt="Foto de Gabriel Trindade"
-                id="fotoGabriel"
-              />
-              <svg
-                viewBox="0 0 227 194"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style="transform: rotate(180deg)"
-                class="moldura"
-                id="bordaBaixo"
-              >
-                <path
-                  id="Vector 4"
-                  d="M219 194V85.5643L141.09 8L2.92063e-06 8"
-                  stroke="#D16666"
-                  stroke-width="15"
-                />
-              </svg>
+            <div style="margin: 15px">
+              <p>
+                1 ano de experiência com Javascript. Atualmente trabalha como
+                estagiário na Basis Tecnologia. Não consegue trabalhar sem
+                música.
+              </p>
+              <p>
+                Sites com design moderno e responsívo, PWAs e aplicações web.
+              </p>
+              <p>
+                Bootsrap, PrimeNG e CSS puro. Implementações simples de
+                back-end com Java e Firebase.
+              </p>
             </div>
           </div>
 
-          <div class="sobreMim__texto">
-            <div class="descritivo">
-              <h2>Sobre mim</h2>
-              <hr />
-              <div style="margin: 15px">
-                <p>
-                  1 ano de experiência com Javascript. Atualmente trabalha como
-                  estagiário na Basis Tecnologia. Não consegue trabalhar sem
-                  música.
-                </p>
-                <p>
-                  Sites com design moderno e responsívo, PWAs e aplicações web.
-                </p>
-                <p>
-                  Bootsrap, PrimeNG e CSS puro. Implementações simples de
-                  back-end com Java e Firebase.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h2>Qualificações</h2>
-              <hr />
-              <ul>
-                <li>Javascript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Angular</li>
-                <li>Java</li>
-                <li>Docker</li>
-              </ul>
-            </div>
+          <div class="qualificacoes">
+            <h2>Qualificações</h2>
+            <hr>
+            <ul>
+              <li>Javascript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Angular</li>
+              <li>Java</li>
+              <li>Docker</li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        <!-- <hr class="divisoria pequena"> -->
-        <hr class="divisoria__projetos">
-      </article>
+      <hr class="divisoria pequena" hidden>
+      <hr class="divisoria__sobreMim">
+    </article>
 
-      <article class="pagina invertida" id="projetos">
-        <div class="container">
-          <div class="projetos__titulo">
-            <h2>Projetos</h2>
-          </div>
+    <article class="pagina invertida" id="projetos">
+      <div class="container">
+        <div class="projetos__titulo">
+          <h2>Projetos</h2>
+        </div>
+
+        <div id="areaRolante">
 
           <div id="timeline">
             <h4 class="caixaAno">2022</h4>
             <div class="containerProjeto">
               <article class="projeto">
                 <img class="projeto__imagem" src="assets/images/testImage.png" alt="Imagem de teste">
-                <div
-                  class="projeto__texto"
-                  onmouseover="mostrarDescDetalhada(this)"
-                  onmouseleave="esconderDescDetalhada(this)"
-                >
+                <div class="projeto__texto" onmouseover="mostrarDescDetalhada(this)"
+                  onmouseleave="esconderDescDetalhada(this)">
                   <h5>trindade.dev</h5>
                   <hr>
                   <p class="descSimples">Meu website</p>
@@ -259,19 +180,16 @@
                   </p>
                 </div>
               </article>
-              <hr class="seta" />
+              <hr class="seta">
             </div>
             <h4 class="caixaAno">2021</h4>
             <div class="containerProjeto">
               <article class="projeto">
                 <img class="projeto__imagem" src="assets/images/testImage.png" alt="Imagem de teste">
-                <div
-                  class="projeto__texto"
-                  onmouseover="mostrarDescDetalhada(this)"
-                  onmouseleave="esconderDescDetalhada(this)"
-                >
+                <div class="projeto__texto" onmouseover="mostrarDescDetalhada(this)"
+                  onmouseleave="esconderDescDetalhada(this)">
                   <h5>Shokey</h5>
-                  <hr />
+                  <hr>
                   <p class="descSimples">
                     Teclado de atalhos na plataforma arduino
                   </p>
@@ -282,19 +200,16 @@
                   </p>
                 </div>
               </article>
-              <hr class="seta" />
+              <hr class="seta">
             </div>
             <h4 class="caixaAno">2020</h4>
             <div class="containerProjeto">
               <article class="projeto">
                 <img class="projeto__imagem" src="assets/images/testImage.png" alt="Imagem de teste">
-                <div
-                  class="projeto__texto"
-                  onmouseover="mostrarDescDetalhada(this)"
-                  onmouseleave="esconderDescDetalhada(this)"
-                >
+                <div class="projeto__texto" onmouseover="mostrarDescDetalhada(this)"
+                  onmouseleave="esconderDescDetalhada(this)">
                   <h5>FakePlatinumGod</h5>
-                  <hr />
+                  <hr>
                   <p class="descSimples">
                     Widget para jogo The Binding of Isaac
                   </p>
@@ -305,17 +220,14 @@
                   </p>
                 </div>
               </article>
-              <hr class="seta" />
+              <hr class="seta">
             </div>
             <h4 class="caixaAno">2019</h4>
             <div class="containerProjeto">
               <article class="projeto">
                 <img class="projeto__imagem" src="assets/images/testImage.png" alt="Imagem de teste">
-                <div
-                  class="projeto__texto"
-                  onmouseover="mostrarDescDetalhada(this)"
-                  onmouseleave="esconderDescDetalhada(this)"
-                >
+                <div class="projeto__texto" onmouseover="mostrarDescDetalhada(this)"
+                  onmouseleave="esconderDescDetalhada(this)">
                   <h5>Yes or No</h5>
                   <hr>
                   <p class="descSimples">Site que responde sim ou não</p>
@@ -325,39 +237,48 @@
                   </p>
                 </div>
               </article>
-              <hr class="seta" />
+              <hr class="seta">
             </div>
-            <hr class="linhaPrincipal" />
+            <hr class="linhaPrincipal">
             <h4 class="caixaAno" id="inicioTimeline">Início</h4>
-
-            <div class="links">
-              <a
-                class="hexagon"
-                href="https://github.com/gvtrindade"
-                target="_blank"
-              >
-                <img src="assets/images/github_64x64.png" />
-              </a>
-              <a
-                class="hexagon"
-                href="https://linkedin.com/in/gvtrindade2"
-                target="_blank"
-              >
-                <img src="assets/images/linkedin_64x64.png" />
-              </a>
-              <a
-                class="hexagon"
-                href="https://github.com/gvtrindade"
-                target="_blank"
-              >
-                <img src="assets/images/mail_64x64.png" />
-              </a>
-            </div>
           </div>
-        </div>
-      </article>
-    </main>
-  </body>
 
-  <script src="index.js"></script>
+          <div class="links">
+            <svg width="215" height="101" viewBox="0 0 215 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+              <a href="mailto:gabriel@trindade.dev" target="_blank">
+                <path d="M68 34L51 63.4449L17 63.4449L0 34L17 4.55514L51 4.55514L68 34Z" class="primaria" />
+
+                <path
+                  d="M53.0878 27.0171V43.693C53.0878 46.576 50.7516 48.9123 47.8685 48.9123H20.5294C19.1451 48.9123 17.8176 48.3624 16.8388 47.3836C15.8599 46.4048 15.3101 45.0772 15.3101 43.693L15.3101 27.0171L33.6005 37.0779C33.9733 37.2827 34.4256 37.2827 34.7974 37.0779L53.0878 27.0161V27.0171ZM47.8685 19.0877C49.231 19.0878 50.5394 19.6207 51.5143 20.5725C52.4891 21.5244 53.0532 22.8197 53.0859 24.1817L34.199 34.5706L15.312 24.1807L15.314 24.0913C15.3697 22.7454 15.9435 21.4733 16.9155 20.5407C17.8875 19.6082 19.1824 19.0876 20.5294 19.0877L47.8685 19.0877Z"
+                  class="terciaria" />
+              </a>
+
+              <a href="https://linkedin.com/in/gvtrindade2" target="_blank">
+                <path d="M142 66.5L124.5 96.3779L89.5 96.3779L72 66.5L89.5 36.6221L124.5 36.6221L142 66.5Z"
+                  class="primaria" />
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M89.0137 51.7733C89.0137 50.977 89.3346 50.2133 89.9058 49.6502C90.477 49.0872 91.2518 48.7708 92.0596 48.7708L122.423 48.7708C122.823 48.7702 123.22 48.8474 123.59 48.998C123.96 49.1486 124.296 49.3697 124.579 49.6486C124.862 49.9275 125.087 50.2587 125.24 50.6233C125.393 50.9879 125.472 51.3786 125.472 51.7733V81.7027C125.472 82.0974 125.394 82.4883 125.241 82.853C125.088 83.2178 124.864 83.5492 124.58 83.8284C124.297 84.1076 123.961 84.329 123.591 84.48C123.221 84.631 122.825 84.7086 122.424 84.7084H92.0596C91.6595 84.7084 91.2632 84.6306 90.8936 84.4797C90.5239 84.3287 90.1881 84.1074 89.9052 83.8284C89.6224 83.5494 89.398 83.2182 89.2451 82.8538C89.0921 82.4893 89.0135 82.0987 89.0137 81.7043V51.7733ZM103.445 62.4728H108.381V64.9166C109.094 63.5118 110.917 62.2474 113.656 62.2474C118.908 62.2474 120.152 65.0456 120.152 70.1798V79.6902H114.838V71.3494C114.838 68.4254 114.125 66.7755 112.316 66.7755C109.805 66.7755 108.761 68.5544 108.761 71.3494V79.6902H103.445V62.4728ZM94.33 79.4664H99.6462V62.2474H94.33V79.4647V79.4664ZM100.407 56.6314C100.417 57.08 100.336 57.5262 100.169 57.9436C100.001 58.361 99.7512 58.7413 99.4329 59.0621C99.1145 59.3829 98.7343 59.6378 98.3146 59.8118C97.8949 59.9859 97.4442 60.0755 96.9889 60.0755C96.5336 60.0755 96.0829 59.9859 95.6632 59.8118C95.2436 59.6378 94.8634 59.3829 94.545 59.0621C94.2266 58.7413 93.9765 58.361 93.8092 57.9436C93.6419 57.5262 93.5609 57.08 93.571 56.6314C93.5906 55.7507 93.9594 54.9126 94.5982 54.2965C95.2371 53.6805 96.0952 53.3356 96.9889 53.3356C97.8826 53.3356 98.7408 53.6805 99.3796 54.2965C100.018 54.9126 100.387 55.7507 100.407 56.6314V56.6314Z"
+                  class="terciaria" />
+              </a>
+
+              <a href="https://github.com/gvtrindade" target="_blank">
+                <path d="M215 35L198 64.4449H164L147 35L164 5.55514L198 5.55514L215 35Z" class="primaria" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M181 16.1111C170.564 16.1111 162.111 24.7777 162.111 35.4778C162.111 44.0475 167.518 51.2858 175.027 53.8519C175.971 54.0214 176.325 53.4404 176.325 52.932C176.325 52.472 176.302 50.9469 176.302 49.3249C171.556 50.2207 170.328 48.1387 169.95 47.0494C169.738 46.4926 168.817 44.7738 168.014 44.3138C167.353 43.9507 166.409 43.055 167.99 43.0308C169.478 43.0066 170.54 44.4349 170.895 45.0159C172.595 47.9451 175.31 47.122 176.396 46.6136C176.561 45.3548 177.057 44.5075 177.6 44.0233C173.397 43.5392 169.006 41.8688 169.006 34.461C169.006 32.3549 169.738 30.6119 170.942 29.2562C170.753 28.7721 170.092 26.787 171.131 24.1241C171.131 24.1241 172.713 23.6157 176.325 26.1092C177.836 25.6734 179.442 25.4555 181.047 25.4555C182.653 25.4555 184.259 25.6734 185.77 26.1092C189.382 23.5915 190.964 24.1241 190.964 24.1241C192.003 26.787 191.342 28.7721 191.153 29.2562C192.357 30.6119 193.089 32.3307 193.089 34.461C193.089 41.893 188.674 43.5392 184.471 44.0233C185.156 44.6285 185.746 45.7905 185.746 47.6062C185.746 50.1964 185.722 52.2784 185.722 52.932C185.722 53.4404 186.077 54.0456 187.021 53.8519C190.771 52.5539 194.029 50.083 196.337 46.7869C198.646 43.4908 199.888 39.5356 199.889 35.4778C199.889 24.7777 191.436 16.1111 181 16.1111Z"
+                  class="terciaria" />
+              </a>
+            </svg>
+
+          </div>
+
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+
+<script src="index.js"></script>
+
 </html>

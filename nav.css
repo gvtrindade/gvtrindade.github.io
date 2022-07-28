@@ -31,7 +31,7 @@ nav{
 }
 
 .invertido{
-  fill: var(--cor-primaria);
+  stroke: var(--cor-primaria) !important;
 }
 
 @media screen and (min-width: 800px) {

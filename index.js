@@ -1,6 +1,6 @@
 //Declarar os elementos
 const paginas = document.getElementsByClassName("pagina");
-const timeline = document.getElementById("timeline");
+const areaRolante = document.getElementById("areaRolante");
 const svgPaginas = document.getElementsByClassName("indicadorNav");
 
 //Declarar as variáveis
@@ -13,8 +13,9 @@ window.scrollTo({ top: 0, behavior: "smooth" });
 //Rolar pagina com a roda do mouse
 window.addEventListener("mousewheel", (e) => rodarMouse(e));
 window.addEventListener("DOMMouseScroll", (e) => rodarMouse(e));
+
 function rodarMouse(evento) {
-  if (timeline.scrollTop === 0 && evento.wheelDelta > 0) {
+  if (areaRolante.scrollTop === 0 && evento.wheelDelta > 0) {
     rolarPagina(paginaAtual - 1);
   } else {
     rolarPagina(paginaAtual + 1);
@@ -24,27 +25,36 @@ function rodarMouse(evento) {
 //Rolar pagina ao passar o dedo pra cima
 let touchStartY = 0;
 let touchEndY = 0;
+const zonaMorta = 200;
 
 window.addEventListener(
   "touchstart",
   (event) => (touchStartY = event.touches[0].screenY)
 );
+
 window.addEventListener(
   "touchmove",
   (event) => (touchEndY = event.touches[0].screenY)
 );
 
 window.addEventListener("touchend", () => {
-  if (timeline.scrollTop === 0) {
+  const distanciaMovimento = calcularDistanciaMovimento(touchStartY, touchEndY);
+  if (areaRolante.scrollTop === 0 && distanciaMovimento > zonaMorta) {
     touchStartY > touchEndY ? rolarPagina(paginaAtual + 1) : rolarPagina(paginaAtual - 1);
   }
 });
+
+function calcularDistanciaMovimento(touchStartY, touchEndY) {
+  return Math.abs(touchEndY - touchStartY);
+}
 
 //Rolar pagina ao clicar nos botões
 function rolarPagina(proxPagina) {
 
   if (proxPagina === paginaAtual) return;
   if (proxPagina < primeiraPagina || proxPagina > totalDePaginas) return;
+
+  travarAcoes(true);
 
   switch (proxPagina) {
     case 0:
@@ -59,14 +69,17 @@ function rolarPagina(proxPagina) {
     default:
       valorTranslate = "0";
   }
-  timeline.scrollTop = 0;
-  animacaoPagina(proxPagina);
-  alterarCorDoIndicador(proxPagina);
 
   Array.from(paginas).forEach((elemento) => {
     elemento.style.transform = `translateY(${valorTranslate})`;
   });
+
+  areaRolante.scrollTop = 0;
+  animacaoPagina(proxPagina);
+  alterarCorDoIndicador(proxPagina);
   paginaAtual = proxPagina;
+
+  travarAcoes(false);
 }
 
 //Alterar aspecto do indicador da pagina atual
@@ -76,10 +89,17 @@ function animacaoPagina(proxPagina) {
 }
 
 function alterarCorDoIndicador(proxPagina) {
-  if(proxPagina === 1 || proxPagina === 2){
-    Array.from(svgPaginas).forEach(indicador => {
-      indicador.classList.toggle('invertido')
-    })
+  Array.from(svgPaginas).forEach(indicador => {
+    const linha = indicador.children[0];
+    if (proxPagina === 0 || !linha.classList.contains('invertido')) {
+      linha.classList.toggle('invertido');
+    }
+  })
+}
+
+function travarAcoes(estado) {
+  if (estado) {
+
   }
 }
 
@@ -102,21 +122,6 @@ function esconderDescDetalhada(elemento) {
     }
     if (filho.className === "descSimples") {
       filho.style = "display: block";
-    }
-  });
-}
-
-//Organizar projetos
-window.onload = () => {
-  const projetos = document.getElementsByClassName("containerProjeto");
-  organizarProjetos(projetos);
-};
-
-function organizarProjetos(projetos) {
-  Array.from(projetos).forEach((projeto, index) => {
-    if (Boolean(index % 2)) {
-      let classeAntiga = projeto.className;
-      projeto.className = `${classeAntiga} esquerda`;
     }
   });
 }
