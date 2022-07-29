@@ -34,14 +34,13 @@ nav{
   stroke: var(--cor-primaria) !important;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
 
   nav{
     right: 10px;
-    flex-direction: column;
     align-items: flex-end;
+    justify-content: center;
     width: auto;
-    height: 100%;
   }
 
   .indicadorPagina{

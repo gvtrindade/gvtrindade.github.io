@@ -32,9 +32,13 @@ h1 {
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 100;
   margin: 0;
+}
+
+h5 {
+  font-size: 1em;
 }
 
 hr {
@@ -52,15 +56,23 @@ ul {
   list-style: none;
 }
 
-.primaria{
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: inline;
+}
+
+.primaria {
   fill: var(--cor-primaria);
 }
 
-.secundaria{
+.secundaria {
   fill: var(--cor-secundaria);
 }
 
-.terciaria{
+.terciaria {
   fill: var(--cor-terciaria);
 }
 
@@ -188,11 +200,7 @@ ul {
 }
 
 .projeto {
-  border: 1px solid black;
   margin: 1em 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .caixaAno,
@@ -201,16 +209,10 @@ ul {
   position: relative;
 }
 
-.projeto__imagem {
-  max-width: 70%;
-}
-
 .projeto__texto {
   background: var(--cor-primaria);
   color: var(--cor-secundaria);
   text-align: center;
-  margin-left: -3em;
-  height: 5em;
   padding: 1em 0.5em;
 }
 
@@ -237,4 +239,87 @@ ul {
 
 .seta {
   display: none;
+}
+
+@media screen and (min-width: 900px) {
+
+  body {
+    font-size: 23px;
+  }
+
+  .desktop {
+    display: inline;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  /* Pagina inicial */
+
+  #inicio .container {
+    justify-content: space-evenly;
+  }
+
+  .divisoria {
+    margin: 0;
+    width: 2em;
+    height: 100%;
+    top: 0;
+    right: 6em;
+  }
+
+  /* Pagina sobre mim */
+
+  .sobreMim__links {
+    justify-content: left;
+    padding-left: 2em;
+    position: absolute;
+  }
+
+  .descritivo,
+  .qualificacoes {
+    margin-left: 4em;
+  }
+
+  .pequena {
+    height: 3em;
+  }
+
+  .sobreMim__texto {
+    display: flex;
+  }
+
+  /* Pagina de projetos */
+
+  #areaRolante {
+    height: 80%;
+  }
+
+  #areaRolante img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .projeto__texto {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+
+  body {
+    font-size: 19px;
+  }
+
 }
