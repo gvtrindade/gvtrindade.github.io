@@ -56,6 +56,10 @@ ul {
   list-style: none;
 }
 
+a{
+  text-decoration: none;
+}
+
 .desktop {
   display: none;
 }
@@ -211,9 +215,12 @@ ul {
 
 .projeto__texto {
   background: var(--cor-primaria);
-  color: var(--cor-secundaria);
   text-align: center;
   padding: 1em 0.5em;
+}
+
+.projeto a{
+  color: var(--cor-secundaria);
 }
 
 .projeto hr {
