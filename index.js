@@ -1,5 +1,5 @@
 //Declarar os elementos
-const paginas = document.getElementsByClassName("pagina");
+const paginas = document.querySelectorAll('.pagina');
 const areaRolante = document.getElementById("areaRolante");
 const svgPaginas = document.getElementsByClassName("indicadorNav");
 
@@ -40,7 +40,9 @@ window.addEventListener(
 window.addEventListener("touchend", () => {
   const distanciaMovimento = calcularDistanciaMovimento(touchStartY, touchEndY);
   if (areaRolante.scrollTop === 0 && distanciaMovimento > zonaMorta) {
-    touchStartY > touchEndY ? rolarPagina(paginaAtual + 1) : rolarPagina(paginaAtual - 1);
+    touchStartY > touchEndY
+      ? rolarPagina(paginaAtual + 1)
+      : rolarPagina(paginaAtual - 1);
   }
 });
 
@@ -50,11 +52,10 @@ function calcularDistanciaMovimento(touchStartY, touchEndY) {
 
 //Rolar pagina ao clicar nos botões
 function rolarPagina(proxPagina) {
-
   if (proxPagina === paginaAtual) return;
   if (proxPagina < primeiraPagina || proxPagina > totalDePaginas) return;
 
-  travarAcoes(true);
+  // travarAcoes(true);
 
   switch (proxPagina) {
     case 0:
@@ -79,7 +80,7 @@ function rolarPagina(proxPagina) {
   alterarCorDoIndicador(proxPagina);
   paginaAtual = proxPagina;
 
-  travarAcoes(false);
+  // travarAcoes(false);
 }
 
 //Alterar aspecto do indicador da pagina atual
@@ -89,18 +90,12 @@ function animacaoPagina(proxPagina) {
 }
 
 function alterarCorDoIndicador(proxPagina) {
-  Array.from(svgPaginas).forEach(indicador => {
+  Array.from(svgPaginas).forEach((indicador) => {
     const linha = indicador.children[0];
-    if (proxPagina === 0 || !linha.classList.contains('invertido')) {
-      linha.classList.toggle('invertido');
+    if (proxPagina === 0 || !linha.classList.contains("invertido")) {
+      linha.classList.toggle("invertido");
     }
-  })
-}
-
-function travarAcoes(estado) {
-  if (estado) {
-
-  }
+  });
 }
 
 //Mostrar/esconder descrição detalhada ao passar o mouse em cima do projeto
@@ -126,14 +121,14 @@ function esconderDescDetalhada(elemento) {
   });
 }
 
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    Math.round(rect.bottom) <=
-    (window.innerHeight || document.documentElement.clientHeight) &&
-    Math.round(rect.right) <=
-    (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
+//Animações de página
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const className = `${entry.target.id}__animacoes`;
+    entry.target.classList.toggle(className, entry.isIntersecting);
+  });
+}, {
+  threshold: 0.2,
+});
+
+paginas.forEach(pagina => {observer.observe(pagina)});

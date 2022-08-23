@@ -5,13 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="index.css"> -->
-  <link rel="stylesheet" href="new.css" />
-  <link rel="stylesheet" href="nav.css" />
-  <link rel="stylesheet" href="projects.css" />
+
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200&display=swap" rel="stylesheet" />
+
   <title>Gabriel Trindade</title>
 </head>
 
@@ -34,7 +36,7 @@
     </a>
   </nav>
   <main>
-    <article class="pagina" id="inicio">
+    <article class="pagina inicio" id="inicio">
       <div class="container">
 
         <div class="links">
@@ -94,7 +96,7 @@
         <div class="inicio__texto">
           <h1>Gabriel Trindade</h1>
           <h3>Full Stack Developer</h3>
-          <hr>
+          <hr class="texto__divisoria">
           <p>
             desenvolvedor web, cursando análise e desenvolvimento de sistemas.
           </p>
@@ -108,8 +110,8 @@
       <hr class="divisoria">
     </article>
 
-    <article class="pagina sobreMim">
-      <hr class="divisoria pequena">
+    <article class="pagina sobreMim" id="sobreMim">
+      <hr class="divisoria pequena desktop">
 
       <div class="links sobreMim__links">
         <svg width="320" height="83" viewBox="0 0 320 83" fill="none" class="mobile" xmlns="http://www.w3.org/2000/svg">
@@ -178,17 +180,17 @@
         <div class="sobreMim__texto">
           <div class="descritivo">
             <h2>Sobre mim</h2>
-            <hr />
+            <hr class="texto__divisoria">
             <div style="margin: 15px">
-              <p>
+              <p style="--order: 1">
                 1 ano de experiência com Javascript. Atualmente trabalha como
                 estagiário na Basis Tecnologia. Não consegue trabalhar sem
                 música.
               </p>
-              <p>
+              <p style="--order: 2">
                 Sites com design moderno e responsívo, PWAs e aplicações web.
               </p>
-              <p>
+              <p style="--order: 3">
                 Bootsrap, PrimeNG e CSS puro. Implementações simples de
                 back-end com Java e Firebase.
               </p>
@@ -197,23 +199,23 @@
 
           <div class="qualificacoes">
             <h2>Qualificações</h2>
-            <hr>
+            <hr class="texto__divisoria">
             <ul>
-              <li>Javascript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Angular</li>
-              <li>Java</li>
-              <li>Docker</li>
+              <li style="--order: 1">Javascript</li>
+              <li style="--order: 2">HTML</li>
+              <li style="--order: 3">CSS</li>
+              <li style="--order: 4">Angular</li>
+              <li style="--order: 5">Java</li>
+              <li style="--order: 6">Docker</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <hr class="divisoria__sobreMim">
+      <hr class="sobreMim__divisoria">
     </article>
 
-    <article class="pagina invertida" id="projetos">
+    <article class="pagina projetos invertida" id="projetos">
 
       <div class="projetos__titulo">
         <h2>Projetos</h2>
@@ -232,7 +234,7 @@
                 <a href="https://trindade.dev" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>trindade.dev</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">Meu website</p>
                   <p class="descCompleta" style="display: none">
                     Website em javascript puro. Contém meus projetos e links
@@ -251,7 +253,7 @@
                 <a href="https://github.com/gvtrindade/multiplayerSnake" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>Multiplayer Snake</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">Jogo da cobrinha multiplayer</p>
                   <p class="descCompleta" style="display: none">
                     Jogo multiplayer em javascript puro. Jogue sozinho ou com um amigo, que vença o melhor!
@@ -272,9 +274,9 @@
                 <a href="https://trindade.dev/fakeplatinumgod-react" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>FakePlatinumGod React</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">
-                    Aplicação para jogo The Binding of Isaac
+                    Aplicação para jogo The Binding of Isaac: Rebirth
                   </p>
                   <p class="descCompleta" style="display: none">
                     Aplicação em react para busca de itens do
@@ -294,7 +296,7 @@
                 <a href="https://github.com/gvtrindade/shokey" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>Shokey</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">
                     Teclado de atalhos na plataforma arduino
                   </p>
@@ -316,7 +318,7 @@
                 <a href="https://github.com/gvtrindade/crareg-react" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>Crareg React</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">
                     Formulário para registro de funcionário
                   </p>
@@ -341,7 +343,7 @@
                 <a href="https://github.com/gvtrindade/sagenda" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>Sagenda</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">
                     Agenda para uso interno do setor ASQUALOG no Senado Federal
                   </p>
@@ -361,7 +363,7 @@
                 <a href="https://github.com/gvtrindade/fakePlatinumGod" target="_blank"
                   onmouseover="mostrarDescDetalhada(this)" onmouseleave="esconderDescDetalhada(this)">
                   <h5>FakePlatinumGod</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">
                     Widget para jogo The Binding of Isaac
                   </p>
@@ -386,7 +388,7 @@
                 <a href="https://trindade.dev/yesorno" target="_blank" onmouseover="mostrarDescDetalhada(this)"
                   onmouseleave="esconderDescDetalhada(this)">
                   <h5>Yes or No</h5>
-                  <hr>
+                  <hr class="texto__divisoria">
                   <p class="descSimples">Site que responde sim ou não</p>
                   <p class="descCompleta" style="display: none">
                     Aplicação PWA em javascript puro que retorna um valor de sim

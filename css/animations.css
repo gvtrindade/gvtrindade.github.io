@@ -1,0 +1,181 @@
+:root{
+    --animationDuration: 2s;
+}
+
+@keyframes direitaParaEsquerda {
+    from{
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to{
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+    
+}
+
+@keyframes esquerdaParaDireita {
+    from{
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to{
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes cimaParaBaixo {
+    from{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to{
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes baixoParaCima {
+    from{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to{
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+
+}
+
+@keyframes growHeight {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+/* Página de início */
+
+.inicio .links a,
+.inicio__texto h1,
+.inicio__texto h3,
+.inicio__texto p,
+.inicio__texto .texto__divisoria,
+.inicio__texto .inicio__img{
+  opacity: 0;
+}
+
+.inicio__animacoes h1,
+.inicio__animacoes p{
+    animation: direitaParaEsquerda var(--animationDuration) forwards;
+}
+
+.inicio__animacoes h3{
+    animation: esquerdaParaDireita var(--animationDuration) forwards;
+}
+
+.inicio__animacoes a{
+    animation: cimaParaBaixo var(--animationDuration) forwards;
+}
+
+.inicio__animacoes a:nth-child(2){
+    animation: baixoParaCima var(--animationDuration) forwards;
+}
+
+.inicio__animacoes .inicio__img,
+.inicio__animacoes .texto__divisoria{
+    animation: fadeIn var(--animationDuration) forwards;
+}
+
+/* Página sobre mim */
+
+.sobreMim h2,
+.sobreMim p,
+.sobreMim li,
+.sobreMim path,
+.sobreMim .retrato,
+.sobreMim .texto__divisoria{
+  opacity: 0;
+}
+
+.sobreMim__animacoes h2,
+.sobreMim__animacoes p:nth-child(even),
+.sobreMim__animacoes li:nth-child(even){
+    animation: esquerdaParaDireita var(--animationDuration) forwards;
+    animation-delay: calc(var(--order) * 100ms);
+}
+
+.sobreMim__animacoes p:nth-child(odd),
+.sobreMim__animacoes .qualificacoes li:nth-child(odd){
+    animation: direitaParaEsquerda var(--animationDuration) forwards;
+    animation-delay: calc(var(--order) * 100ms);
+}
+
+.sobreMim__animacoes path:nth-child(odd){
+    animation: cimaParaBaixo var(--animationDuration) forwards;
+}
+
+.sobreMim__animacoes path:nth-child(even){
+    animation: baixoParaCima var(--animationDuration) forwards;
+}
+
+.sobreMim__animacoes .texto__divisoria,
+.sobreMim__animacoes .retrato{
+    animation: fadeIn var(--animationDuration) forwards;
+}
+
+/* Página de projetos */
+
+.projetos h2,
+.projetos #timeline,
+.projetos .texto__divisoria,
+.projetos .projeto__imagem,
+.projetos .projeto__texto p,
+.projetos .projeto__texto h5{
+    opacity: 0;
+}
+
+.projetos__animacoes #timeline{
+    animation: fadeIn var(--animationDuration) forwards;
+}
+
+.projetos__animacoes .projeto__imagem,
+.projetos__animacoes .projeto__texto p{
+    animation: esquerdaParaDireita var(--animationDuration) forwards;
+}
+
+
+.projetos__animacoes h2,
+.projetos__animacoes .projeto__texto h5{
+    animation: direitaParaEsquerda var(--animationDuration) forwards;
+}
+
+.projetos__animacoes .texto__divisoria{
+    animation: fadeIn var(--animationDuration) forwards;
+}
+
+@media screen and (min-width: 900px) {
+
+    .inicio__animacoes a{
+        animation: esquerdaParaDireita var(--animationDuration) forwards;
+    }
+    
+    .inicio__animacoes a:nth-child(2){
+        animation: direitaParaEsquerda var(--animationDuration) forwards;
+    }
+}

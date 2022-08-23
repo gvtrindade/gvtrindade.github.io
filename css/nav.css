@@ -1,13 +1,5 @@
-:root {
-  --cor-primaria: #353535;
-  --cor-secundaria: white;
-  --cor-terciaria: #EEE4E1;
-  --cor-detalhe: #D16666;
-  --valor-ativo: 65px;
-}
-
 nav{
-  position: fixed;
+  position: absolute;
   bottom: 0.8rem;
   display: flex;
   justify-content: center;
@@ -38,9 +30,6 @@ nav{
 
   nav{
     right: 10px;
-    align-items: flex-end;
-    justify-content: center;
-    width: auto;
   }
 
   .indicadorPagina{

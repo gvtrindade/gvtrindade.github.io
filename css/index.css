@@ -28,13 +28,15 @@ h2 {
 h1 {
   font-size: 1.5em;
   letter-spacing: 0.05em;
-  margin: 0;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 h3 {
   font-size: 1.2em;
   font-weight: 100;
-  margin: 0;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 h5 {
@@ -45,6 +47,7 @@ hr {
   margin: 0 auto;
   width: 5em;
   border: 2px solid var(--cor-detalhe);
+  background-color: var(--cor-detalhe);
 }
 
 img {
@@ -119,6 +122,7 @@ a{
 .inicio__img {
   display: block;
   margin: 0 auto;
+  opacity: 0;
 }
 
 .divisoria {
@@ -151,6 +155,11 @@ a{
   margin-top: 0.5em;
 }
 
+.sobreMim__texto li {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .sobreMim__texto .descritivo {
   margin-bottom: 2.5rem;
 }
@@ -159,7 +168,7 @@ a{
   margin-bottom: 2.5rem;
 }
 
-.divisoria__sobreMim {
+.sobreMim__divisoria {
   width: 100%;
   height: 5em;
   border: none;
@@ -185,6 +194,8 @@ a{
   height: 75vh;
   width: 90%;
   margin: 0 auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 }
 
 #areaRolante::-webkit-scrollbar {
@@ -197,6 +208,7 @@ a{
 
 .caixaAno {
   width: fit-content;
+  width: -moz-fit-content;
   padding: 0.4em 0.8em;
   border: 2px solid;
   margin: 0 auto;
@@ -310,10 +322,8 @@ a{
     height: 80%;
   }
 
-  #areaRolante img {
+  .projeto__imagem {
     max-width: 50%;
-    display: block;
-    margin: 0 auto;
   }
 
   .projeto__texto {
@@ -327,6 +337,15 @@ a{
 
   body {
     font-size: 19px;
+  }
+
+  .sobreMim__divisoria{
+    height: 4.3em;
+  }
+
+  .projeto__imagem {
+    display: block;
+    margin: 0 auto;
   }
 
 }
