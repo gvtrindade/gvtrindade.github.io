@@ -3,6 +3,7 @@
   --cor-secundaria: white;
   --cor-terciaria: #eee4e1;
   --cor-detalhe: #d16666;
+  --doc-height: 100%;
 }
 
 *,
@@ -15,7 +16,7 @@
 
 body {
   font-family: "Abel", sans-serif;
-  overflow-y: hidden;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -85,6 +86,7 @@ a{
 
 .pagina {
   height: 100vh;
+  height: var(--doc-height);
   transition: transform 1.2s;
   background-color: var(--cor-primaria);
   color: var(--cor-secundaria);
@@ -225,6 +227,11 @@ a{
   position: relative;
 }
 
+.projeto__imagem {
+  display: block;
+  margin: 0 auto;
+}
+
 .projeto__texto {
   background: var(--cor-primaria);
   text-align: center;
@@ -341,11 +348,6 @@ a{
 
   .sobreMim__divisoria{
     height: 4.3em;
-  }
-
-  .projeto__imagem {
-    display: block;
-    margin: 0 auto;
   }
 
 }

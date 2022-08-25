@@ -10,12 +10,19 @@ let totalDePaginas = paginas.length - 1;
 
 window.scrollTo({ top: 0, behavior: "smooth" });
 
+const documentHeight = () => {
+  const doc = document.documentElement;
+  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
+}
+window.addEventListener("resize", documentHeight);
+documentHeight();
+
 //Rolar pagina com a roda do mouse
 window.addEventListener("mousewheel", (e) => rodarMouse(e));
 window.addEventListener("DOMMouseScroll", (e) => rodarMouse(e));
 
 function rodarMouse(evento) {
-  if (areaRolante.scrollTop === 0 && evento.wheelDelta > 0) {
+  if (areaRolante.scrollTop === 0 && (evento.wheelDelta > 0 || evento.detail < 0)) {
     rolarPagina(paginaAtual - 1);
   } else {
     rolarPagina(paginaAtual + 1);
@@ -25,7 +32,7 @@ function rodarMouse(evento) {
 //Rolar pagina ao passar o dedo pra cima
 let touchStartY = 0;
 let touchEndY = 0;
-const zonaMorta = 200;
+const zonaMorta = 100;
 
 window.addEventListener(
   "touchstart",
@@ -55,17 +62,15 @@ function rolarPagina(proxPagina) {
   if (proxPagina === paginaAtual) return;
   if (proxPagina < primeiraPagina || proxPagina > totalDePaginas) return;
 
-  // travarAcoes(true);
-
   switch (proxPagina) {
     case 0:
       valorTranslate = "0";
       break;
     case 1:
-      valorTranslate = "-100vh";
+      valorTranslate = "-100%";
       break;
     case 2:
-      valorTranslate = "-200vh";
+      valorTranslate = "-200%";
       break;
     default:
       valorTranslate = "0";
@@ -80,7 +85,6 @@ function rolarPagina(proxPagina) {
   alterarCorDoIndicador(proxPagina);
   paginaAtual = proxPagina;
 
-  // travarAcoes(false);
 }
 
 //Alterar aspecto do indicador da pagina atual
