@@ -30,6 +30,7 @@ nav{
 
   nav{
     right: 10px;
+    justify-content: flex-end;
   }
 
   .indicadorPagina{

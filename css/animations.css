@@ -154,18 +154,18 @@
     animation: fadeIn var(--animationDuration) forwards;
 }
 
-.projetos__animacoes .projeto__imagem,
-.projetos__animacoes .projeto__texto p{
+.projeto__animacoes .projeto__imagem,
+.projeto__animacoes .projeto__texto p{
     animation: esquerdaParaDireita var(--animationDuration) forwards;
 }
 
 
 .projetos__animacoes h2,
-.projetos__animacoes .projeto__texto h5{
+.projeto__animacoes .projeto__texto h5{
     animation: direitaParaEsquerda var(--animationDuration) forwards;
 }
 
-.projetos__animacoes .texto__divisoria{
+.projeto__animacoes .texto__divisoria{
     animation: fadeIn var(--animationDuration) forwards;
 }
 

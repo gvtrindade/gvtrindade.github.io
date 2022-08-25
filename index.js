@@ -1,6 +1,7 @@
 //Declarar os elementos
 const paginas = document.querySelectorAll('.pagina');
 const areaRolante = document.getElementById("areaRolante");
+const projetos = document.querySelectorAll('.projeto');
 const svgPaginas = document.getElementsByClassName("indicadorNav");
 
 //Declarar as variáveis
@@ -126,7 +127,7 @@ function esconderDescDetalhada(elemento) {
 }
 
 //Animações de página
-const observer = new IntersectionObserver((entries) => {
+const observadorPagina = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     const className = `${entry.target.id}__animacoes`;
     entry.target.classList.toggle(className, entry.isIntersecting);
@@ -135,4 +136,16 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.2,
 });
 
-paginas.forEach(pagina => {observer.observe(pagina)});
+paginas.forEach(pagina => {observadorPagina.observe(pagina)});
+
+const observadorProjeto = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle('projeto__animacoes', entry.isIntersecting);
+    if (entry.isIntersecting) observadorProjeto.unobserve(entry.target);
+  });
+  
+}, {
+  threshold: 0.1,
+});
+
+projetos.forEach(projeto => {observadorProjeto.observe(projeto)});
