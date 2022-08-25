@@ -1,0 +1,45 @@
+nav{
+  position: absolute;
+  bottom: 0.8rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.indicadorNav{
+  height: 7px;
+  width: 30px;
+  transform: rotate(90deg);
+  margin: 1em 0;
+}
+
+.indicadorPagina:hover{
+  cursor: pointer;
+}
+
+.ativo{
+  width: 45px;
+}
+
+.invertido{
+  stroke: var(--cor-primaria) !important;
+}
+
+@media screen and (min-width: 900px) {
+
+  nav{
+    right: 10px;
+    justify-content: flex-end;
+  }
+
+  .indicadorPagina{
+    height: 6px;
+    width: 40px;
+  }
+
+  .primeiro{
+    width: 65px;
+  }
+
+}
