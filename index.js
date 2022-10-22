@@ -1,10 +1,13 @@
 //Declarar os elementos
+import { textoPt, textoEn } from "./assets/texts/Textos.js"
+import { carregarTextosProjetos } from "./projetos.js"
 const paginas = document.querySelectorAll('.pagina');
 const areaRolante = document.getElementById("areaRolante");
 const projetos = document.querySelectorAll('.projeto');
 const svgPaginas = document.getElementsByClassName("indicadorNav");
 
 //Declarar as variáveis
+const linguaNavegador = window.navigator.language.includes('pt') ? 'Pt' : 'En';
 let paginaAtual = 0;
 let primeiraPagina = 0;
 let totalDePaginas = paginas.length - 1;
@@ -18,50 +21,99 @@ const documentHeight = () => {
 window.addEventListener("resize", documentHeight);
 documentHeight();
 
-//Rolar pagina com a roda do mouse
-window.addEventListener("mousewheel", (e) => rodarMouse(e));
-window.addEventListener("DOMMouseScroll", (e) => rodarMouse(e));
+//Carregar textos de acordo com a lingua
+carregarTextos(linguaNavegador);
+document.querySelector('.linguas__Pt').addEventListener('click', () => carregarTextos('Pt'));
+document.querySelector('.linguas__En').addEventListener('click', () => carregarTextos('En'));
 
-function rodarMouse(evento) {
+function carregarTextos(lingua) {
+  selecionarLinguaAtiva(lingua);
+  if (lingua === "Pt") {
+    Object.entries(textoPt).forEach(texto => {
+      document.getElementById(texto[0]).innerText = texto[1];
+    });
+    carregarTextosProjetos("Pt");
+  } else {
+    Object.entries(textoEn).forEach(texto => {
+      document.getElementById(texto[0]).innerText = texto[1];
+    });
+    carregarTextosProjetos("En");
+  }
+}
+
+function selecionarLinguaAtiva(lingua) {
+  if (document.querySelector(`.linguas__${lingua}`).classList.contains('ativo')) {
+    document.querySelector('.linguas__En').classList.toggle('ativo');
+    document.querySelector('.linguas__Pt').classList.toggle('ativo');
+  }
+}
+
+//Rolar pagina com a roda do mouse
+function adicionarEventosScroll() {
+  window.addEventListener("mousewheel", direcaoMovimentoPagina);
+  window.addEventListener("DOMMouseScroll", direcaoMovimentoPagina);
+
+  window.addEventListener("touchstart", calcularToutchStart);
+  window.addEventListener("touchmove", calcularToutchEnd);
+  window.addEventListener("touchend", direcaoMovimentoPagina);
+}
+
+function calcularToutchStart(event) {
+  touchStartY = event.touches[0].screenY
+}
+
+function calcularToutchEnd(event) {
+  touchEndY = event.touches[0].screenY
+}
+
+function removerEventosScroll() {
+  window.removeEventListener("mousewheel", direcaoMovimentoPagina);
+  window.removeEventListener("DOMMouseScroll", direcaoMovimentoPagina);
+
+  window.removeEventListener("touchstart", calcularToutchStart);
+  window.removeEventListener("touchmove", calcularToutchEnd);
+  window.removeEventListener("touchend", direcaoMovimentoPagina);
+}
+
+adicionarEventosScroll();
+paginas[0].addEventListener("transitionend", () => adicionarEventosScroll());
+
+function direcaoMovimentoPagina(evento) {
   if (areaRolante.scrollTop === 0 && (evento.wheelDelta > 0 || evento.detail < 0)) {
     rolarPagina(paginaAtual - 1);
   } else {
     rolarPagina(paginaAtual + 1);
+  }
+  
+  if (areaRolante.scrollTop === 0
+    && calcularDistanciaMovimento(touchStartY, touchEndY) > zonaMorta) {
+    if (window.getAttribute('listener') !== true) adicionarEventosScroll();
+    touchStartY > touchEndY
+      ? rolarPagina(paginaAtual + 1)
+      : rolarPagina(paginaAtual - 1);
   }
 }
 
 //Rolar pagina ao passar o dedo pra cima
 let touchStartY = 0;
 let touchEndY = 0;
-const zonaMorta = 100;
-
-window.addEventListener(
-  "touchstart",
-  (event) => (touchStartY = event.touches[0].screenY)
-);
-
-window.addEventListener(
-  "touchmove",
-  (event) => (touchEndY = event.touches[0].screenY)
-);
-
-window.addEventListener("touchend", () => {
-  const distanciaMovimento = calcularDistanciaMovimento(touchStartY, touchEndY);
-  if (areaRolante.scrollTop === 0 && distanciaMovimento > zonaMorta) {
-    touchStartY > touchEndY
-      ? rolarPagina(paginaAtual + 1)
-      : rolarPagina(paginaAtual - 1);
-  }
-});
+const zonaMorta = 300;
 
 function calcularDistanciaMovimento(touchStartY, touchEndY) {
   return Math.abs(touchEndY - touchStartY);
 }
 
 //Rolar pagina ao clicar nos botões
+document.querySelectorAll('.nav__ancora').forEach((elemento, key) => {
+  elemento.addEventListener('click', () => rolarPagina(key));
+})
+
 function rolarPagina(proxPagina) {
   if (proxPagina === paginaAtual) return;
   if (proxPagina < primeiraPagina || proxPagina > totalDePaginas) return;
+
+  let valorTranslate;
+  removerEventosScroll();
 
   switch (proxPagina) {
     case 0:
@@ -103,29 +155,6 @@ function alterarCorDoIndicador(proxPagina) {
   });
 }
 
-//Mostrar/esconder descrição detalhada ao passar o mouse em cima do projeto
-function mostrarDescDetalhada(elemento) {
-  Array.from(elemento.children).forEach((filho) => {
-    if (filho.className === "descCompleta") {
-      filho.style = "display: block";
-    }
-    if (filho.className === "descSimples") {
-      filho.style = "display: none";
-    }
-  });
-}
-
-function esconderDescDetalhada(elemento) {
-  Array.from(elemento.children).forEach((filho) => {
-    if (filho.className === "descCompleta") {
-      filho.style = "display: none";
-    }
-    if (filho.className === "descSimples") {
-      filho.style = "display: block";
-    }
-  });
-}
-
 //Animações de página
 const observadorPagina = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -136,16 +165,16 @@ const observadorPagina = new IntersectionObserver((entries) => {
   threshold: 0.2,
 });
 
-paginas.forEach(pagina => {observadorPagina.observe(pagina)});
+paginas.forEach(pagina => { observadorPagina.observe(pagina) });
 
 const observadorProjeto = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     entry.target.classList.toggle('projeto__animacoes', entry.isIntersecting);
     if (entry.isIntersecting) observadorProjeto.unobserve(entry.target);
   });
-  
+
 }, {
   threshold: 0.1,
 });
 
-projetos.forEach(projeto => {observadorProjeto.observe(projeto)});
+projetos.forEach(projeto => { observadorProjeto.observe(projeto) });

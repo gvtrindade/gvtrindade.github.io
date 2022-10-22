@@ -1,4 +1,4 @@
-nav{
+nav {
   position: absolute;
   bottom: 0.8rem;
   display: flex;
@@ -7,39 +7,65 @@ nav{
   z-index: 1;
 }
 
-.indicadorNav{
+.indicadorNav {
   height: 7px;
   width: 30px;
   transform: rotate(90deg);
   margin: 1em 0;
 }
 
-.indicadorPagina:hover{
+.indicadorPagina:hover {
   cursor: pointer;
 }
 
-.ativo{
+.ativo {
   width: 45px;
 }
 
-.invertido{
+.invertido {
   stroke: var(--cor-primaria) !important;
+}
+
+.linguas {
+  position: fixed;
+  color: var(--cor-secundaria);
+  margin: 0.5em 1.5em;
+  z-index: 2;
+  right: 0;
+  bottom: 1em;
+}
+
+.linguas button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--cor-secundaria);
+}
+
+.linguas .ativo {
+  color: darkgray;
+  width: auto;
 }
 
 @media screen and (min-width: 900px) {
 
-  nav{
+  nav {
     right: 10px;
     justify-content: flex-end;
   }
 
-  .indicadorPagina{
+  .indicadorPagina {
     height: 6px;
     width: 40px;
   }
 
-  .primeiro{
+  .primeiro {
     width: 65px;
+  }
+
+  .linguas {
+    display: inline;
+    top: 0;
   }
 
 }
