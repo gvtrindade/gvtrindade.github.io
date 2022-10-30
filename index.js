@@ -1,10 +1,13 @@
 //Declarar os elementos
+import { textoPt, textoEn } from "./assets/texts/Textos.js"
+import { carregarTextosProjetos } from "./projetos.js"
 const paginas = document.querySelectorAll('.pagina');
 const areaRolante = document.getElementById("areaRolante");
 const projetos = document.querySelectorAll('.projeto');
 const svgPaginas = document.getElementsByClassName("indicadorNav");
 
 //Declarar as variáveis
+const linguaNavegador = window.navigator.language.includes('pt') ? 'Pt' : 'En';
 let paginaAtual = 0;
 let primeiraPagina = 0;
 let totalDePaginas = paginas.length - 1;
@@ -18,11 +21,54 @@ const documentHeight = () => {
 window.addEventListener("resize", documentHeight);
 documentHeight();
 
-//Rolar pagina com a roda do mouse
-window.addEventListener("mousewheel", (e) => rodarMouse(e));
-window.addEventListener("DOMMouseScroll", (e) => rodarMouse(e));
+//Carregar textos de acordo com a lingua
+carregarTextos(linguaNavegador);
+document.querySelector('.linguas__Pt').addEventListener('click', () => carregarTextos('Pt'));
+document.querySelector('.linguas__En').addEventListener('click', () => carregarTextos('En'));
 
-function rodarMouse(evento) {
+function carregarTextos(lingua) {
+  selecionarLinguaAtiva(lingua);
+  if (lingua === "Pt") {
+    Object.entries(textoPt).forEach(texto => {
+      document.getElementById(texto[0]).innerText = texto[1];
+    });
+    carregarTextosProjetos("Pt");
+  } else {
+    Object.entries(textoEn).forEach(texto => {
+      document.getElementById(texto[0]).innerText = texto[1];
+    });
+    carregarTextosProjetos("En");
+  }
+}
+
+function selecionarLinguaAtiva(lingua) {
+  if (document.querySelector(`.linguas__${lingua}`).classList.contains('inativo')) {
+    document.querySelector('.linguas__En').classList.toggle('inativo');
+    document.querySelector('.linguas__Pt').classList.toggle('inativo');
+  }
+}
+
+//Rolar pagina com a roda do mouse
+function adicionarEventosScroll() {
+  window.addEventListener("mousewheel", rolarPaginaPeloScroll);
+  window.addEventListener("DOMMouseScroll", rolarPaginaPeloScroll);
+
+  window.addEventListener("touchstart", calcularToutchStart);
+  window.addEventListener("touchend", calcularToutchEnd);
+}
+
+function removerEventosScroll() {
+  window.removeEventListener("mousewheel", rolarPaginaPeloScroll);
+  window.removeEventListener("DOMMouseScroll", rolarPaginaPeloScroll);
+
+  window.removeEventListener("touchstart", calcularToutchStart);
+  window.removeEventListener("touchend", calcularToutchEnd);
+}
+
+adicionarEventosScroll();
+paginas[0].addEventListener("transitionend", () => adicionarEventosScroll());
+
+function rolarPaginaPeloScroll(evento) {
   if (areaRolante.scrollTop === 0 && (evento.wheelDelta > 0 || evento.detail < 0)) {
     rolarPagina(paginaAtual - 1);
   } else {
@@ -30,38 +76,41 @@ function rodarMouse(evento) {
   }
 }
 
-//Rolar pagina ao passar o dedo pra cima
+//Rolar pagina com o touch
 let touchStartY = 0;
 let touchEndY = 0;
-const zonaMorta = 100;
+const OFFSET_TOUCH = 10;
 
-window.addEventListener(
-  "touchstart",
-  (event) => (touchStartY = event.touches[0].screenY)
-);
+function calcularToutchStart(event) {
+  touchStartY = event.changedTouches[0].pageY;
+}
 
-window.addEventListener(
-  "touchmove",
-  (event) => (touchEndY = event.touches[0].screenY)
-);
+function calcularToutchEnd(event) {
+  touchEndY = event.changedTouches[0].pageY;
+  rolarPaginaPeloTouch();
+}
 
-window.addEventListener("touchend", () => {
-  const distanciaMovimento = calcularDistanciaMovimento(touchStartY, touchEndY);
-  if (areaRolante.scrollTop === 0 && distanciaMovimento > zonaMorta) {
-    touchStartY > touchEndY
-      ? rolarPagina(paginaAtual + 1)
-      : rolarPagina(paginaAtual - 1);
+function calcularOffset() {
+  return Math.abs(touchEndY - touchStartY) > OFFSET_TOUCH;
+}
+
+function rolarPaginaPeloTouch() {
+  if (areaRolante.scrollTop === 0 && calcularOffset()) {
+    touchStartY > touchEndY ? rolarPagina(paginaAtual + 1) : rolarPagina(paginaAtual - 1);
   }
-});
-
-function calcularDistanciaMovimento(touchStartY, touchEndY) {
-  return Math.abs(touchEndY - touchStartY);
 }
 
 //Rolar pagina ao clicar nos botões
+document.querySelectorAll('.nav__ancora').forEach((elemento, key) => {
+  elemento.addEventListener('click', () => rolarPagina(key));
+})
+
 function rolarPagina(proxPagina) {
   if (proxPagina === paginaAtual) return;
   if (proxPagina < primeiraPagina || proxPagina > totalDePaginas) return;
+
+  let valorTranslate;
+  removerEventosScroll();
 
   switch (proxPagina) {
     case 0:
@@ -85,7 +134,6 @@ function rolarPagina(proxPagina) {
   animacaoPagina(proxPagina);
   alterarCorDoIndicador(proxPagina);
   paginaAtual = proxPagina;
-
 }
 
 //Alterar aspecto do indicador da pagina atual
@@ -95,35 +143,17 @@ function animacaoPagina(proxPagina) {
 }
 
 function alterarCorDoIndicador(proxPagina) {
-  Array.from(svgPaginas).forEach((indicador) => {
+  Array.from(svgPaginas).forEach(indicador => {
     const linha = indicador.children[0];
     if (proxPagina === 0 || !linha.classList.contains("invertido")) {
       linha.classList.toggle("invertido");
     }
   });
-}
 
-//Mostrar/esconder descrição detalhada ao passar o mouse em cima do projeto
-function mostrarDescDetalhada(elemento) {
-  Array.from(elemento.children).forEach((filho) => {
-    if (filho.className === "descCompleta") {
-      filho.style = "display: block";
-    }
-    if (filho.className === "descSimples") {
-      filho.style = "display: none";
-    }
-  });
-}
-
-function esconderDescDetalhada(elemento) {
-  Array.from(elemento.children).forEach((filho) => {
-    if (filho.className === "descCompleta") {
-      filho.style = "display: none";
-    }
-    if (filho.className === "descSimples") {
-      filho.style = "display: block";
-    }
-  });
+  if (proxPagina === 0 || !document.querySelector('.linguas').classList.contains("invertido")) {
+    document.querySelector('.linguas').classList.toggle("invertido");
+    document.querySelectorAll('.linguas button').forEach(elemento => elemento.classList.toggle("invertido"));
+  }
 }
 
 //Animações de página
@@ -136,16 +166,16 @@ const observadorPagina = new IntersectionObserver((entries) => {
   threshold: 0.2,
 });
 
-paginas.forEach(pagina => {observadorPagina.observe(pagina)});
+paginas.forEach(pagina => { observadorPagina.observe(pagina) });
 
 const observadorProjeto = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     entry.target.classList.toggle('projeto__animacoes', entry.isIntersecting);
     if (entry.isIntersecting) observadorProjeto.unobserve(entry.target);
   });
-  
+
 }, {
   threshold: 0.1,
 });
 
-projetos.forEach(projeto => {observadorProjeto.observe(projeto)});
+projetos.forEach(projeto => { observadorProjeto.observe(projeto) });

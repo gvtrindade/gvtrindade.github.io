@@ -102,6 +102,10 @@ a{
   padding-top: 1em;
 }
 
+.nav__ancora:hover{
+  cursor: pointer;
+}
+
 /* Pagina inicial */
 
 .inicio__texto {
