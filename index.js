@@ -150,10 +150,17 @@ function alterarCorDoIndicador(proxPagina) {
     }
   });
 
-  if (proxPagina === 0 || !document.querySelector('.linguas').classList.contains("invertido")) {
+  if (checarUltimaPagina(proxPagina)) {
     document.querySelector('.linguas').classList.toggle("invertido");
     document.querySelectorAll('.linguas button').forEach(elemento => elemento.classList.toggle("invertido"));
   }
+}
+
+function checarUltimaPagina(proxPagina) {
+  if (screen.width < 900) {
+    return proxPagina === 0 || !document.querySelector(".linguas").classList.contains('invertido');
+  }
+  return proxPagina === 2 || (proxPagina === 1 && document.querySelector(".linguas").classList.contains('invertido'));
 }
 
 //Animações de página
