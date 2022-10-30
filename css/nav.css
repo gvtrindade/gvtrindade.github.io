@@ -42,9 +42,21 @@ nav {
   color: var(--cor-secundaria);
 }
 
-.linguas .ativo {
+.linguas .inativo {
   color: darkgray;
   width: auto;
+}
+
+.linguas .invertido {
+  color: var(--cor-primaria);
+}
+
+.linguas.invertido span {
+  color: var(--cor-primaria);
+}
+
+.linguas .inativo.invertido {
+  color: darkgray;
 }
 
 @media screen and (min-width: 900px) {

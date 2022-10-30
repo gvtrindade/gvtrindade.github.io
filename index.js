@@ -42,65 +42,62 @@ function carregarTextos(lingua) {
 }
 
 function selecionarLinguaAtiva(lingua) {
-  if (document.querySelector(`.linguas__${lingua}`).classList.contains('ativo')) {
-    document.querySelector('.linguas__En').classList.toggle('ativo');
-    document.querySelector('.linguas__Pt').classList.toggle('ativo');
+  if (document.querySelector(`.linguas__${lingua}`).classList.contains('inativo')) {
+    document.querySelector('.linguas__En').classList.toggle('inativo');
+    document.querySelector('.linguas__Pt').classList.toggle('inativo');
   }
 }
 
 //Rolar pagina com a roda do mouse
 function adicionarEventosScroll() {
-  window.addEventListener("mousewheel", direcaoMovimentoPagina);
-  window.addEventListener("DOMMouseScroll", direcaoMovimentoPagina);
+  window.addEventListener("mousewheel", rolarPaginaPeloScroll);
+  window.addEventListener("DOMMouseScroll", rolarPaginaPeloScroll);
 
   window.addEventListener("touchstart", calcularToutchStart);
-  window.addEventListener("touchmove", calcularToutchEnd);
-  window.addEventListener("touchend", direcaoMovimentoPagina);
-}
-
-function calcularToutchStart(event) {
-  touchStartY = event.touches[0].screenY
-}
-
-function calcularToutchEnd(event) {
-  touchEndY = event.touches[0].screenY
+  window.addEventListener("touchend", calcularToutchEnd);
 }
 
 function removerEventosScroll() {
-  window.removeEventListener("mousewheel", direcaoMovimentoPagina);
-  window.removeEventListener("DOMMouseScroll", direcaoMovimentoPagina);
+  window.removeEventListener("mousewheel", rolarPaginaPeloScroll);
+  window.removeEventListener("DOMMouseScroll", rolarPaginaPeloScroll);
 
   window.removeEventListener("touchstart", calcularToutchStart);
-  window.removeEventListener("touchmove", calcularToutchEnd);
-  window.removeEventListener("touchend", direcaoMovimentoPagina);
+  window.removeEventListener("touchend", calcularToutchEnd);
 }
 
 adicionarEventosScroll();
 paginas[0].addEventListener("transitionend", () => adicionarEventosScroll());
 
-function direcaoMovimentoPagina(evento) {
+function rolarPaginaPeloScroll(evento) {
   if (areaRolante.scrollTop === 0 && (evento.wheelDelta > 0 || evento.detail < 0)) {
     rolarPagina(paginaAtual - 1);
   } else {
     rolarPagina(paginaAtual + 1);
   }
-  
-  if (areaRolante.scrollTop === 0
-    && calcularDistanciaMovimento(touchStartY, touchEndY) > zonaMorta) {
-    if (window.getAttribute('listener') !== true) adicionarEventosScroll();
-    touchStartY > touchEndY
-      ? rolarPagina(paginaAtual + 1)
-      : rolarPagina(paginaAtual - 1);
-  }
 }
 
-//Rolar pagina ao passar o dedo pra cima
+//Rolar pagina com o touch
 let touchStartY = 0;
 let touchEndY = 0;
-const zonaMorta = 300;
+const OFFSET_TOUCH = 10;
 
-function calcularDistanciaMovimento(touchStartY, touchEndY) {
-  return Math.abs(touchEndY - touchStartY);
+function calcularToutchStart(event) {
+  touchStartY = event.changedTouches[0].pageY;
+}
+
+function calcularToutchEnd(event) {
+  touchEndY = event.changedTouches[0].pageY;
+  rolarPaginaPeloTouch();
+}
+
+function calcularOffset() {
+  return Math.abs(touchEndY - touchStartY) > OFFSET_TOUCH;
+}
+
+function rolarPaginaPeloTouch() {
+  if (areaRolante.scrollTop === 0 && calcularOffset()) {
+    touchStartY > touchEndY ? rolarPagina(paginaAtual + 1) : rolarPagina(paginaAtual - 1);
+  }
 }
 
 //Rolar pagina ao clicar nos botões
@@ -137,7 +134,6 @@ function rolarPagina(proxPagina) {
   animacaoPagina(proxPagina);
   alterarCorDoIndicador(proxPagina);
   paginaAtual = proxPagina;
-
 }
 
 //Alterar aspecto do indicador da pagina atual
@@ -147,12 +143,17 @@ function animacaoPagina(proxPagina) {
 }
 
 function alterarCorDoIndicador(proxPagina) {
-  Array.from(svgPaginas).forEach((indicador) => {
+  Array.from(svgPaginas).forEach(indicador => {
     const linha = indicador.children[0];
     if (proxPagina === 0 || !linha.classList.contains("invertido")) {
       linha.classList.toggle("invertido");
     }
   });
+
+  if (proxPagina === 0 || !document.querySelector('.linguas').classList.contains("invertido")) {
+    document.querySelector('.linguas').classList.toggle("invertido");
+    document.querySelectorAll('.linguas button').forEach(elemento => elemento.classList.toggle("invertido"));
+  }
 }
 
 //Animações de página
