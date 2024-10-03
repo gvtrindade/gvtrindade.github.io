@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      -'release/**'
+      - 'release/**'
 
 env:
   DOCKER_IMAGE_NAME: trindade.dev
@@ -25,7 +25,6 @@ jobs:
         release_version=$(echo "${{ github.ref }}" | sed 's/refs\/heads\/.*\///')
         echo "Building release version $release_version"
         echo "RELEASE_VERSION=$release_version" >> $GITHUB_ENV
-        shell: bash
 
     # Build the Docker image
     - name: Build the Docker image
