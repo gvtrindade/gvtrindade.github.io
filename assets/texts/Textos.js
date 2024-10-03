@@ -10,7 +10,7 @@ const textoPt = {
   descritivo__texto1: `${contadorDeAnos()} anos de experiência com Javascript. Atualmente trabalha como estagiário na Basis Tecnologia. Não consegue trabalhar sem música.`,
   descritivo__texto2: "Sites com design moderno e responsívo, PWAs e aplicações web.",
   descritivo__texto3: "Habilidades em React e Angular, com implementações de backend em Java e Python. Testes unitários, CI/CD, gerenciamento de bancos de dados",
-  qualificacoes__titulo: "Qualificações",
+  qualificacoes__titulo: "Habilidades",
   projetos__titulo: "Projetos",
   inicioTimeline: "Início"
 }
