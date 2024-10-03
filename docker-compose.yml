@@ -2,6 +2,8 @@ services:
   trindade:
     container_name: trindade-dev
     image: trindade-dev:latest
+    build: .
+    pull_policy: build
     ports:
       - 8080:80
     restart: always
