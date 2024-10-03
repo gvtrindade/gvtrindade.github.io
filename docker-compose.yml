@@ -1,7 +1,6 @@
-version: '3'
 services:
   trindade:
-    container_name: trindade_dev
+    container_name: trindade-dev
     image: trindade.dev:latest
     ports:
       - 8080:80
