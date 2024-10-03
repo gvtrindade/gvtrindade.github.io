@@ -1,4 +1,4 @@
-name: Update website version
+name: Update docker image
 on:
   workflow_dispatch:
   push:
@@ -6,7 +6,7 @@ on:
       - 'release/**'
 
 env:
-  DOCKER_IMAGE_NAME: trindade.dev
+  DOCKER_IMAGE_NAME: trindade-dev
   DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
 
 jobs:
